@@ -7,14 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 
-  <title>hello</title>
+  <title>Pelican + Github Pages = Own Blogs</title>
 
 
   <meta name="HandheldFriendly" content="True" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="referrer" content="origin" />
   <meta name="generator" content="Pelican" />
-<link href="/my-first-post.html" rel="canonical" />
+<link href="/pelican-github-pages-blog.html" rel="canonical" />
   <!-- Feed -->
 
   <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
@@ -55,27 +55,31 @@
 
 
 
-    <meta name="description" content="first try">
+    <meta name="description" content="如何使用 Pelican 和 GitHub Pages 搭建个人博客">
 
     <meta name="author" content="Ashitaka">
 
     <meta name="tags" content="pelican">
+    <meta name="tags" content="github">
+    <meta name="tags" content="blog">
 
 
 
 
 <!-- Open Graph -->
 <meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="Ashitaka's Blogs"/>
-<meta prefix="og: http://ogp.me/ns#" property="og:title" content="hello"/>
-<meta prefix="og: http://ogp.me/ns#" property="og:description" content="first try"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="Pelican + Github Pages = Own Blogs"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="如何使用 Pelican 和 GitHub Pages 搭建个人博客"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
-<meta prefix="og: http://ogp.me/ns#" property="og:url" content="/my-first-post.html"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="/pelican-github-pages-blog.html"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
 <meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2026-02-27 14:11:00+08:00"/>
 <meta prefix="og: http://ogp.me/ns#" property="article:modified_time" content=""/>
 <meta prefix="og: http://ogp.me/ns#" property="article:author" content="/author/ashitaka.html">
-<meta prefix="og: http://ogp.me/ns#" property="article:section" content="intro"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:section" content="tutorial"/>
 <meta prefix="og: http://ogp.me/ns#" property="article:tag" content="pelican"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="github"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="blog"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:image" content="/theme/images/home-bg.jpg">
 
 <!-- Twitter Card -->
@@ -84,8 +88,8 @@
 {
   "@context": "http://schema.org",
   "@type": "Article",
-  "name": "hello",
-  "headline": "hello",
+  "name": "Pelican + Github Pages = Own Blogs",
+  "headline": "Pelican + Github Pages = Own Blogs",
   "datePublished": "2026-02-27 14:11:00+08:00",
   "dateModified": "",
   "author": {
@@ -94,8 +98,8 @@
     "url": "/author/ashitaka.html"
   },
   "image": "/theme/images/post-bg.jpg",
-  "url": "/my-first-post.html",
-  "description": "first try"
+  "url": "/pelican-github-pages-blog.html",
+  "description": "如何使用 Pelican 和 GitHub Pages 搭建个人博客"
 }
 </script>
 </head>
@@ -143,9 +147,9 @@
       <div class="inner">
         <span class="post-info">
           <span class="post-type">Article</span>
-          <span class="post-count">Intro</span>
+          <span class="post-count">Tutorial</span>
         </span>
-        <h1 class="post-title">hello</h1>
+        <h1 class="post-title">Pelican + Github Pages = Own Blogs</h1>
         <div class="post-meta">
           <div class="post-meta-avatars">
 
@@ -170,33 +174,87 @@
         <article class="post">
         <div class="inner">
           <section class="post-content">
-            <h1>Hello</h1>
-<p>Hello! </p>
-<h2>This is First</h2>
-<p>But Not LAST! 我喜欢, 我尝试!</p>
+            <h1>Pelican + GitHub Pages = 个人博客</h1>
+<h2>实现思路</h2>
+<p>以 Markdown（支持其他格式）作为博客编写的原始格式，通过 Pelican 静态网站生成器将其转换为静态网页，然后上传到 GitHub Pages 进行自动托管。</p>
+<h2>依赖环境</h2>
+<ul>
+<li>Python（Pelican 是 Python 的模块）</li>
+</ul>
+<h2>详细步骤</h2>
+<h3>1. 安装 Pelican</h3>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;pelican[markdown]&quot;</span>
+</code></pre></div>
+
+<h3>2. 初始化 Pelican 环境</h3>
+<p>在一个新文件夹（建议新建一个仓库）中运行：</p>
+<div class="highlight"><pre><span></span><code>pelican-quickstart
+</code></pre></div>
+
+<p>按照提示填写相关配置信息。</p>
+<h3>3. 编写博客文章</h3>
+<p>在 <code>content</code> 目录下创建 Markdown 文件，需要包含以下元数据：</p>
+<div class="highlight"><pre><span></span><code>Title: 文章标题
+Date: 2026-02-27 14:11
+Category: 分类
+Tags: 标签1, 标签2
+Slug: 文章URL路径
+Author: 作者
+Summary: 文章摘要
+
+<span class="gu">## 正文内容</span>
+这里是文章的具体内容...
+</code></pre></div>
+
+<h3>4. 生成静态网页</h3>
+<p>运行以下命令将内容转换为静态网页，输出到 <code>output</code> 文件夹：</p>
+<div class="highlight"><pre><span></span><code>pelican<span class="w"> </span>content
+</code></pre></div>
+
+<h3>5. 创建 GitHub 仓库</h3>
+<p>在 GitHub 上创建名为 <code>yourname.github.io</code> 的仓库（严格按照此命名格式），并且必须设置为公开（public）。</p>
+<h3>6. 配置 GitHub Pages</h3>
+<p>在仓库的 <code>Settings</code> -&gt; <code>Pages</code> 选项中，将 <code>Branch</code> 设置为 <code>master</code>，<code>Root</code> 设置为 <code>/</code>（根目录）。</p>
+<h3>7. 部署到 GitHub Pages</h3>
+<p>在 <code>output</code> 文件夹中执行以下命令：</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>init
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/yourname/yourname.github.io
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Initial commit&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>master
+</code></pre></div>
+
+<h3>8. 访问博客</h3>
+<p>部署完成后，你可以通过 <code>https://yourname.github.io</code> 访问你的个人博客。</p>
+<h2>注意事项</h2>
+<ul>
+<li>确保你的 Markdown 文件包含正确的元数据格式</li>
+<li>每次更新博客后，需要重新生成静态网页并推送到 GitHub</li>
+<li>可以通过修改 <code>pelicanconf.py</code> 文件来自定义博客的配置</li>
+</ul>
           </section>
 
 
           <section class="post-footer" >
             <div class="post-share">
               <span class="post-info-label">Share</span>
-              <a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=hello&amp;url=/my-first-post.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+              <a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=Pelican + Github Pages = Own Blogs&amp;url=/pelican-github-pages-blog.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                 <i class="icon icon-twitter" aria-hidden="true"></i><span class="hidden">Twitter</span>
               </a>
-              <a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/my-first-post.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+              <a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/pelican-github-pages-blog.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                 <i class="icon icon-facebook" aria-hidden="true"></i><span class="hidden">Facebook</span>
               </a>
-              <a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=/my-first-post.html&amp;title=hello" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+              <a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=/pelican-github-pages-blog.html&amp;title=Pelican + Github Pages = Own Blogs" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
                 <i class="icon icon-linkedin" aria-hidden="true"></i><span class="hidden">LinkedIn</span>
               </a>
-              <a title="Email" aria-label="Email" class="email" href="mailto:?subject=hello&amp;body=/my-first-post.html">
+              <a title="Email" aria-label="Email" class="email" href="mailto:?subject=Pelican + Github Pages = Own Blogs&amp;body=/pelican-github-pages-blog.html">
                 <i class="icon icon-mail" aria-hidden="true"></i><span class="hidden">Email</span>
               </a>
               <div class="clear"></div>
             </div>
 
             <aside class="post-tags">
-<a href="/tag/pelican.html">pelican</a>            </aside>
+<a href="/tag/pelican.html">pelican</a><a href="/tag/github.html">github</a><a href="/tag/blog.html">blog</a>            </aside>
 
             <div class="clear"></div>
 
@@ -205,11 +263,11 @@
 
 
           <aside class="post-nav">
-            <a class="post-nav-prev" href="/pelican-github-pages-blog.html">
+            <a class="post-nav-next" href="/my-first-post.html">
               <section class="post-nav-teaser">
-                <i class="icon icon-arrow-right"></i>
-                  <h2 class="post-nav-title">Pelican + Github Pages = Own Blogs</h2>
-                <p class="post-nav-excerpt">如何使用 Pelican 和 GitHub Pages 搭建个人博客</p>
+                <i class="icon icon-arrow-left"></i>
+                  <h2 class="post-nav-title">hello</h2>
+                <p class="post-nav-excerpt">first try</p>
                 <p class="post-nav-meta"><time datetime="周五 27 二月 2026">周五 27 二月 2026</time></p>
               </section>
             </a>
