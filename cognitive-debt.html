@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="chinese (simplified)">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>认知债务</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/cognitive-debt.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    var siteUrl = '';
+  </script>
+
+  <script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+
+
+
+
+
+
+
+    <meta name="description" content="关于 AI 辅助开发中代码生产速度超过理解速度所带来的认知债务问题">
+
+    <meta name="author" content="Ashitaka">
+
+    <meta name="tags" content="AI">
+    <meta name="tags" content="cognitive-debt">
+    <meta name="tags" content="engineering">
+
+
+
+
+<!-- Open Graph -->
+<meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="Ashitaka's Blogs"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="认知债务"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="关于 AI 辅助开发中代码生产速度超过理解速度所带来的认知债务问题"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="/cognitive-debt.html"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2026-02-27 16:00:00+08:00"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:modified_time" content=""/>
+<meta prefix="og: http://ogp.me/ns#" property="article:author" content="/author/ashitaka.html">
+<meta prefix="og: http://ogp.me/ns#" property="article:section" content="翻译"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="AI"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="cognitive-debt"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="engineering"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:image" content="/theme/images/home-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "认知债务",
+  "headline": "认知债务",
+  "datePublished": "2026-02-27 16:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Ashitaka",
+    "url": "/author/ashitaka.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/cognitive-debt.html",
+  "description": "关于 AI 辅助开发中代码生产速度超过理解速度所带来的认知债务问题"
+}
+</script>
+</head>
+
+
+
+
+
+
+
+<body class="category-template">
+
+<div class="nav-header">
+  <nav class="nav-wrapper" aria-label="Main">
+<ul>
+
+
+</ul>
+<ul class="nav-meta">
+  <li class="nav-search" style="display: none;">
+    <a title="Search">
+      <i class="icon icon-search" aria-hidden="true"></i>
+      <span>Search</span>
+    </a>
+  </li>
+</ul>  </nav>
+
+  <div class="nav-wrapper-control">
+    <div class="inner">
+      <a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>Menu</a>
+      <a class="nav-search" title="Search" role="button" style="display: none;"><i class="icon icon-search" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>
+<div class="nav-close" role="button" aria-label="Close"></div>
+  <section id="wrapper" class="page-wrapper">
+    <!-- Progressbar -->
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="post-header ">
+      <div class="inner">
+        <span class="post-info">
+          <span class="post-type">Article</span>
+          <span class="post-count">翻译</span>
+        </span>
+        <h1 class="post-title">认知债务</h1>
+        <div class="post-meta">
+          <div class="post-meta-avatars">
+
+
+            <figure class="post-meta-avatar avatar">
+              <a class="author-avatar" href="/author/ashitaka.html">
+                <img class="author-profile-image" src="" alt="Ashitaka" />
+              </a>
+            </figure>
+          </div>
+
+          <h4 class="post-meta-author">
+            Ashitaka
+          </h4>
+          <time datetime="周五 27 二月 2026">周五 27 二月 2026</time>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+          <section class="post-content">
+            <p><img alt="" src="https://www.rockoder.com/images/beyondthecode/cognitive-debt-hero.svg"></p>
+<p>一位工程师在一个冲刺周期内交付了七个功能。DORA 指标看起来完美无瑕。晋升材料几乎自己就写好了。</p>
+<p>六个月后，一次架构变更需要修改这些功能。团队中没有人能够解释为什么某些组件存在或它们如何交互。构建这些功能的工程师盯着自己的代码，就像看着陌生人的代码一样。</p>
+<p><strong>代码的生产成本已经低于理解成本。</strong></p>
+<h2>理解滞后</h2>
+<p>当工程师手动编写代码时，两个并行过程发生。第一个是生产：字符出现在文件中，测试被编写，系统发生变化。第二个是内化：心智模型形成，边缘情况变得直观，架构关系固化为理解。这些过程是耦合的。打字的行为强制参与。实现的摩擦为推理创造了空间。</p>
+<p>AI 辅助开发解耦了这些过程。一个提示在几秒钟内生成数百行代码。工程师审查、调整、迭代。输出加速。但内化不能按比例加速。真正理解构建了什么、为什么那样构建以及它如何与其他所有事物相关的认知工作仍然受限于人类处理速度。</p>
+<p><strong>输出速度和理解速度之间的这种差距就是认知债务。</strong></p>
+<p>与技术债务不同，技术债务通过系统故障或维护成本显现，<strong>认知债务对速度指标仍然不可见</strong>。代码可以工作。测试通过。功能交付。赤字只存在于构建系统的工程师的头脑中，表现为对他们自己工作的不确定性。</p>
+<p>这种债务并非真正不可见。它最终出现在可靠性指标中：平均恢复时间（MTTR）变得更长，变更失败率逐渐上升。但这些是滞后指标，与推动季度决策的速度指标相隔数月。当 MTTR 发出问题信号时，理解赤字已经复合增长。</p>
+<h2>组织实际测量什么</h2>
+<p>工程性能系统演变为测量可观察的输出。完成的故事点。交付的功能。合并的提交。审查周转时间。这些指标来自输出和理解紧密耦合的时代，当交付某物意味着理解某物时。</p>
+<p>这些指标从未直接测量理解，因为理解是假设的。交付功能的工程师被假定为理解该功能。<strong>这种假设成立，因为生产过程本身强制理解。</strong></p>
+<p><strong>这种假设不再成立。</strong> 工程师现在可以在只对其实现保持表面熟悉的情况下交付功能。功能可以工作。指标记录成功。传统上与这些功能一起积累的组织知识根本不会以相同的速率形成。</p>
+<p>绩效校准委员会看到速度改进。他们看不到理解赤字。他们不能，因为组织测量系统的任何人工制品都无法捕捉那个维度。</p>
+<h2>审查者的困境</h2>
+<p>关于认知债务的讨论通常集中在生成代码的工程师身上。更尖锐的问题在于审查它的工程师。</p>
+<p>代码审查演变为质量门控。高级工程师审查初级工程师的工作，捕捉错误，提出改进建议，转移知识。限制因素总是初级工程师的输出速度。高级工程师可以比初级工程师生产得更快地进行审查。</p>
+<p>AI 辅助开发反转了这种关系。<strong>初级工程师现在可以生成比高级工程师能够批判性审计的更快的代码。</strong> 生成的代码量超过了可用于深度审查的带宽。必须有所取舍，通常是审查深度。</p>
+<p>审查者面临不可能的选择。保持以前的审查标准并成为否定 AI 提供的速度收益的瓶颈。或者以到达的速度批准代码，希望测试捕捉到审查遗漏的内容。大多数人选择后者，通常是无意识的，因为组织压力有利于吞吐量。</p>
+<p>这是认知债务复合增长最快的地方。作者的理解赤字可能通过后来与代码的参与来恢复。审查者的理解赤字传播：他们批准了他们不完全理解的代码，这现在带有隐含的认可。<strong>审查过的代码就是被理解的代码这一组织假设不再成立。</strong></p>
+<h2>职业倦怠模式</h2>
+<p>广泛使用 AI 工具的工程师报告了一种特定形式的疲惫，这与传统的职业倦怠不同。传统的职业倦怠来自持续的认知负荷，来自在解决复杂问题时需要在头脑中保持太多东西。新模式来自更接近认知断连的东西。</p>
+<p>工作发生得很快。进度可见。但工程师经历一种持续的感觉，即没有完全掌握自己的输出。他们可以执行，但解释需要重构。他们可以修改，但预测变得不可靠。即使系统正确运行，他们构建的系统也感觉稍微陌生。</p>
+<p>这创造了一种独特的心理状态：<strong>高输出结合低信心</strong>。工程师生产更多，同时对他们生产的东西感觉更不确定。在基于可见输出进行排名的组织中，这创造了尽管不确定性增长但仍继续生成的压力。</p>
+<p>停下来深入理解他们构建的东西的工程师在速度指标上落后。优先考虑吞吐量而不是理解的工程师实现他们的季度目标。<strong>激励结构选择了加速认知债务积累的行为。</strong></p>
+<h2>当组织记忆失败时</h2>
+<p>工程组织中的知识以两种形式存在。第一种是显式的：文档、设计文档、记录的决策。第二种是隐性的：在构建和维护系统的人员头脑中持有的理解。隐性知识不能完全外化，因为其中许多作为直觉、模式识别和通过直接参与工作形成的情境判断而存在。</p>
+<p>当构建系统的人员离开或轮换到新项目时，隐性知识随之离开。组织传统上通过正常的工程工作过程补充这种知识。在现有系统上构建的新工程师通过实现的摩擦发展自己的隐性理解。</p>
+<p>AI 辅助开发可能短路这种补充机制。如果新工程师可以在不发展深度理解的情况下生成工作修改，他们永远不会形成传统上会积累的隐性知识。<strong>组织不仅通过流失而且通过形成不足而失去知识。</strong></p>
+<p>这创造了一种延迟的失败模式。系统继续运行。新功能继续交付。但真正理解系统的人员储备逐渐耗尽。当情况最终需要那种理解时，当某事以意外方式中断或需求以需要架构推理的方式变化时，组织发现了赤字。</p>
+<h2>债务如何复合增长</h2>
+<p>随着认知债务的积累，出现三种失败模式。</p>
+<p>第一种涉及通常可靠的启发式方法的反转。工程师通常信任在生产中运行多年的代码。如果它存活那么久，它可能工作。代码存在的时间越长而不引起问题，它获得的信心就越多。AI 生成的代码反转了这种模式。<strong>它保持未触动的时间越长，它变得越危险</strong>，因为周围人类的上下文窗口已经完全关闭。编写时几乎不被理解的代码在编写它的人离开后变得完全不透明。</p>
+<blockquote>
+<p>他们正在调试一个由黑盒子编写的黑盒子。</p>
+</blockquote>
+<p>第二种失败模式在事件期间显现。警报在凌晨 3:00 触发。值班工程师打开一个他们没有构建的系统，由他们没有监督的工具生成，文档化方式假设了他们实际上不具备的熟悉度。<strong>他们正在调试一个由黑盒子编写的黑盒子。</strong> 当有人理解系统时，这本来是十分钟的修复，当没有人理解时，这变成了四小时的取证调查。在足够多的事件中乘以这一点，总成本超过了 AI 辅助开发提供的任何速度收益。</p>
+<blockquote>
+<p>组织实际上是用未来高级工程师的管道来换取本季度的功能交付。</p>
+</blockquote>
+<p>第三种失败模式在更长的时间尺度上运行。主要依赖 AI 辅助开发的初级工程师永远不会发展来自手动实现的直觉。他们在不形成指导架构判断的经验积累的情况下交付功能。组织实际上是用未来高级工程师的管道来换取本季度的功能交付。成本不会出现在当前人员编制模型中，因为五年后会成为高级架构师的人还没有缺席。<strong>他们根本没有形成。</strong></p>
+<h2>主管的视角</h2>
+<p>从工程领导层的角度来看，AI 辅助开发呈现为生产力收益。团队交付更快。路线图压缩。人员编制讨论变得更有利。这些是向上传播通过组织报告结构的可观察信号。</p>
+<p>在这些团队中积累的认知债务不呈现为信号。没有"工程师可以在不重新阅读的情况下解释自己的代码"的指标。没有"组织理解深度"的仪表板。这个概念不符合季度业务审查格式或人员编制理由叙述。</p>
+<p>主管根据可观察信号做出决策。当这些信号统一指示成功时，加倍产生这些信号的方法的决策在领导层可用的信息环境中是理性的。<strong>给定数据，决策不是错误的。数据不完整。</strong></p>
+<h2>这个模型在哪里失效</h2>
+<p>认知债务框架并不均匀地适用于所有工程工作。有些任务确实是机械的。有些代码库确实受益于没有深度架构理解的快速迭代。有些功能确实不需要传统上通过手动实现形成的理解水平。</p>
+<p>该模型还假设理解以前以足够的速率形成。这个假设可能是慷慨的。工程师在理解自己工作的深度上总是有所不同。分布可能只是在转移而不是新现象出现。</p>
+<p>此外，工具和文档实践可能会演变以部分关闭理解差距。如果组织开发捕获和传输 AI 辅助开发未能有机形成的理解的方法，债务可能是可管理的而不是累积的。</p>
+<h2>测量问题</h2>
+<blockquote>
+<p>系统正确地优化它测量的东西。它测量的东西不再捕捉重要的东西。</p>
+</blockquote>
+<p>基本挑战是<strong>组织不能优化它们不能测量的东西</strong>。速度是可测量的。理解不是，或者至少不是通过任何当前馈入绩效评估、晋升决策或人员编制规划的机制。</p>
+<p>直到理解对组织决策系统变得可读，激励结构将继续有利于速度。优先考虑理解而不是输出的工程师将比优先考虑输出而不是理解的同行看起来不那么有生产力。绩效校准将奖励更快积累债务的行为。</p>
+<p>这不是个别经理或工程师的失败。这是一个为生产和理解耦合的时代设计的测量系统，在耦合不再成立的时代运行。<strong>系统正确地优化它测量的东西。它测量的东西不再捕捉重要的东西。</strong></p>
+<p>差距最终会显现。无论是通过超过预测的维护成本，通过需要没有人拥有的理解的事件，还是通过暴露没有深度理解的系统脆弱性的新需求。显现的时间和形式仍然不确定。潜在动态不是。</p>
+          </section>
+
+
+          <section class="post-footer" >
+
+            <aside class="post-tags">
+<a href="/tag/ai.html">AI</a><a href="/tag/cognitive-debt.html">cognitive-debt</a><a href="/tag/engineering.html">engineering</a>            </aside>
+
+            <div class="clear"></div>
+
+
+          </section>
+
+
+          <aside class="post-nav">
+            <a class="post-nav-next" href="/ai-true-is-an-anti-pattern.html">
+              <section class="post-nav-teaser">
+                <i class="icon icon-arrow-left"></i>
+                  <h2 class="post-nav-title">AI=true 是一种反模式</h2>
+                <p class="post-nav-excerpt">关于避免在开发中为 AI 智能体和人类开发者创建不同工作流的思考</p>
+                <p class="post-nav-meta"><time datetime="周五 27 二月 2026">周五 27 二月 2026</time></p>
+              </section>
+            </a>
+            <a class="post-nav-prev" href="/context-folding.html">
+              <section class="post-nav-teaser">
+                <i class="icon icon-arrow-right"></i>
+                  <h2 class="post-nav-title">上下文折叠</h2>
+                <p class="post-nav-excerpt">关于使用多个 AI 实例进行上下文折叠以获得更好结果的方法</p>
+                <p class="post-nav-meta"><time datetime="周五 27 二月 2026">周五 27 二月 2026</time></p>
+              </section>
+            </a>
+            <div class="clear"></div>
+          </aside>
+
+        </div>
+      </article>
+    </main>
+    <div class="nav-footer">
+      <nav class="nav-wrapper" aria-label="Footer">
+        <span class="nav-copy">Ashitaka's Blogs &copy; 2023
+        </span>
+        <span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> &bull; Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> &bull;
+          <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme">
+            <span class="theme-icon"></span><span class="theme-text">System theme</span>
+          </a>
+        </span>
+      </nav>
+    </div>
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script type="text/javascript" src="/theme/js/jquery.fitvids.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+
+  <!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+
+</html>

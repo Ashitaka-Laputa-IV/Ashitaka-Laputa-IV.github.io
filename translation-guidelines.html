@@ -7,14 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 
-  <title>hello</title>
+  <title>技术文章翻译要点</title>
 
 
   <meta name="HandheldFriendly" content="True" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="referrer" content="origin" />
   <meta name="generator" content="Pelican" />
-<link href="/my-first-post.html" rel="canonical" />
+<link href="/translation-guidelines.html" rel="canonical" />
   <!-- Feed -->
 
   <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
@@ -55,27 +55,31 @@
 
 
 
-    <meta name="description" content="first try">
+    <meta name="description" content="技术文章翻译的核心原则和具体要求">
 
     <meta name="author" content="Ashitaka">
 
-    <meta name="tags" content="pelican">
+    <meta name="tags" content="translation">
+    <meta name="tags" content="technical-writing">
+    <meta name="tags" content="guidelines">
 
 
 
 
 <!-- Open Graph -->
 <meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="Ashitaka's Blogs"/>
-<meta prefix="og: http://ogp.me/ns#" property="og:title" content="hello"/>
-<meta prefix="og: http://ogp.me/ns#" property="og:description" content="first try"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="技术文章翻译要点"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="技术文章翻译的核心原则和具体要求"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
-<meta prefix="og: http://ogp.me/ns#" property="og:url" content="/my-first-post.html"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="/translation-guidelines.html"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
-<meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2026-02-27 14:11:00+08:00"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2026-02-27 16:00:00+08:00"/>
 <meta prefix="og: http://ogp.me/ns#" property="article:modified_time" content=""/>
 <meta prefix="og: http://ogp.me/ns#" property="article:author" content="/author/ashitaka.html">
-<meta prefix="og: http://ogp.me/ns#" property="article:section" content="intro"/>
-<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="pelican"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:section" content="指南"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="translation"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="technical-writing"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="guidelines"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:image" content="/theme/images/home-bg.jpg">
 
 <!-- Twitter Card -->
@@ -84,9 +88,9 @@
 {
   "@context": "http://schema.org",
   "@type": "Article",
-  "name": "hello",
-  "headline": "hello",
-  "datePublished": "2026-02-27 14:11:00+08:00",
+  "name": "技术文章翻译要点",
+  "headline": "技术文章翻译要点",
+  "datePublished": "2026-02-27 16:00:00+08:00",
   "dateModified": "",
   "author": {
     "@type": "Person",
@@ -94,8 +98,8 @@
     "url": "/author/ashitaka.html"
   },
   "image": "/theme/images/post-bg.jpg",
-  "url": "/my-first-post.html",
-  "description": "first try"
+  "url": "/translation-guidelines.html",
+  "description": "技术文章翻译的核心原则和具体要求"
 }
 </script>
 </head>
@@ -143,9 +147,9 @@
       <div class="inner">
         <span class="post-info">
           <span class="post-type">Article</span>
-          <span class="post-count">Intro</span>
+          <span class="post-count">指南</span>
         </span>
-        <h1 class="post-title">hello</h1>
+        <h1 class="post-title">技术文章翻译要点</h1>
         <div class="post-meta">
           <div class="post-meta-avatars">
 
@@ -170,17 +174,57 @@
         <article class="post">
         <div class="inner">
           <section class="post-content">
-            <h1>Hello</h1>
-<p>Hello! </p>
-<h2>This is First</h2>
-<p>But Not LAST! 我喜欢, 我尝试!</p>
+            <p><strong>技术文章翻译要点</strong></p>
+<ol>
+<li>
+<p><strong>核心原则（信）：</strong> 精准传递技术原意，不臆造、不曲解。准确是最高优先级。</p>
+</li>
+<li>
+<p><strong>术语统一（信）：</strong></p>
+<ul>
+<li>遵循行业通用译法，核心术语前后一致。</li>
+<li>首次出现时，可采用“中文（英文）”标注，确保无歧义。</li>
+</ul>
+</li>
+<li>
+<p><strong>代码与数据（信）：</strong></p>
+<ul>
+<li>代码、命令、数字、单位、版本号完全保留原文，只翻译注释。</li>
+</ul>
+</li>
+<li>
+<p><strong>句式转换（达）：</strong></p>
+<ul>
+<li>长句拆短句，符合中文表达习惯。</li>
+<li>被动转主动（如“it can be used”→”可用于”）。</li>
+<li>调整语序，先交代背景/条件，后给出结论/结果。</li>
+</ul>
+</li>
+<li>
+<p><strong>语言风格（达）：</strong></p>
+<ul>
+<li>客观、简洁、清晰，避免文学修饰。</li>
+<li>去除“翻译腔”，使译文读起来像流畅的中文原创。</li>
+</ul>
+</li>
+<li>
+<p><strong>格式与细节（雅）：</strong></p>
+<ul>
+<li>中英文间建议加空格，提升阅读体验。</li>
+<li>中文使用全角标点，代码/链接内保持原格式。</li>
+</ul>
+</li>
+<li>
+<p><strong>最终验收：</strong> 逻辑通顺，无歧义，术语一致，读起来不像翻译。</p>
+</li>
+</ol>
           </section>
 
 
           <section class="post-footer" >
 
             <aside class="post-tags">
-<a href="/tag/pelican.html">pelican</a>            </aside>
+<a href="/tag/translation.html">translation</a><a href="/tag/technical-writing.html">technical-writing</a><a href="/tag/guidelines.html">guidelines</a>            </aside>
 
             <div class="clear"></div>
 
@@ -189,19 +233,19 @@
 
 
           <aside class="post-nav">
-            <a class="post-nav-next" href="/whale-fall.html">
+            <a class="post-nav-next" href="/one-bite-at-a-time.html">
               <section class="post-nav-teaser">
                 <i class="icon icon-arrow-left"></i>
-                  <h2 class="post-nav-title">鲸落</h2>
-                <p class="post-nav-excerpt">用鲸落比喻描述开源项目废弃后的生态系统演变</p>
+                  <h2 class="post-nav-title">一口一口来</h2>
+                <p class="post-nav-excerpt">如何通过分解大任务为小步骤来完成宏伟目标</p>
                 <p class="post-nav-meta"><time datetime="周五 27 二月 2026">周五 27 二月 2026</time></p>
               </section>
             </a>
-            <a class="post-nav-prev" href="/pelican-github-pages-blog.html">
+            <a class="post-nav-prev" href="/use-plan-files.html">
               <section class="post-nav-teaser">
                 <i class="icon icon-arrow-right"></i>
-                  <h2 class="post-nav-title">Pelican + Github Pages = Own Blogs</h2>
-                <p class="post-nav-excerpt">如何使用 Pelican 和 GitHub Pages 搭建个人博客</p>
+                  <h2 class="post-nav-title">使用 .plan 文件</h2>
+                <p class="post-nav-excerpt">关于使用 .plan 文件来组织工作和记录思考的方法</p>
                 <p class="post-nav-meta"><time datetime="周五 27 二月 2026">周五 27 二月 2026</time></p>
               </section>
             </a>

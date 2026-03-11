@@ -7,14 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 
-  <title>hello</title>
+  <title>AI=true 是一种反模式</title>
 
 
   <meta name="HandheldFriendly" content="True" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="referrer" content="origin" />
   <meta name="generator" content="Pelican" />
-<link href="/my-first-post.html" rel="canonical" />
+<link href="/ai-true-is-an-anti-pattern.html" rel="canonical" />
   <!-- Feed -->
 
   <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
@@ -55,27 +55,31 @@
 
 
 
-    <meta name="description" content="first try">
+    <meta name="description" content="关于避免在开发中为 AI 智能体和人类开发者创建不同工作流的思考">
 
     <meta name="author" content="Ashitaka">
 
-    <meta name="tags" content="pelican">
+    <meta name="tags" content="AI">
+    <meta name="tags" content="programming">
+    <meta name="tags" content="anti-pattern">
 
 
 
 
 <!-- Open Graph -->
 <meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="Ashitaka's Blogs"/>
-<meta prefix="og: http://ogp.me/ns#" property="og:title" content="hello"/>
-<meta prefix="og: http://ogp.me/ns#" property="og:description" content="first try"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="AI=true 是一种反模式"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="关于避免在开发中为 AI 智能体和人类开发者创建不同工作流的思考"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
-<meta prefix="og: http://ogp.me/ns#" property="og:url" content="/my-first-post.html"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="/ai-true-is-an-anti-pattern.html"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
-<meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2026-02-27 14:11:00+08:00"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2026-02-27 16:00:00+08:00"/>
 <meta prefix="og: http://ogp.me/ns#" property="article:modified_time" content=""/>
 <meta prefix="og: http://ogp.me/ns#" property="article:author" content="/author/ashitaka.html">
-<meta prefix="og: http://ogp.me/ns#" property="article:section" content="intro"/>
-<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="pelican"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:section" content="翻译"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="AI"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="programming"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="anti-pattern"/>
 <meta prefix="og: http://ogp.me/ns#" property="og:image" content="/theme/images/home-bg.jpg">
 
 <!-- Twitter Card -->
@@ -84,9 +88,9 @@
 {
   "@context": "http://schema.org",
   "@type": "Article",
-  "name": "hello",
-  "headline": "hello",
-  "datePublished": "2026-02-27 14:11:00+08:00",
+  "name": "AI=true 是一种反模式",
+  "headline": "AI=true 是一种反模式",
+  "datePublished": "2026-02-27 16:00:00+08:00",
   "dateModified": "",
   "author": {
     "@type": "Person",
@@ -94,8 +98,8 @@
     "url": "/author/ashitaka.html"
   },
   "image": "/theme/images/post-bg.jpg",
-  "url": "/my-first-post.html",
-  "description": "first try"
+  "url": "/ai-true-is-an-anti-pattern.html",
+  "description": "关于避免在开发中为 AI 智能体和人类开发者创建不同工作流的思考"
 }
 </script>
 </head>
@@ -143,9 +147,9 @@
       <div class="inner">
         <span class="post-info">
           <span class="post-type">Article</span>
-          <span class="post-count">Intro</span>
+          <span class="post-count">翻译</span>
         </span>
-        <h1 class="post-title">hello</h1>
+        <h1 class="post-title">AI=true 是一种反模式</h1>
         <div class="post-meta">
           <div class="post-meta-avatars">
 
@@ -170,17 +174,39 @@
         <article class="post">
         <div class="inner">
           <section class="post-content">
-            <h1>Hello</h1>
-<p>Hello! </p>
-<h2>This is First</h2>
-<p>But Not LAST! 我喜欢, 我尝试!</p>
+            <h2><code>AI=true</code> 是一种反模式</h2>
+<p><a href="https://keleshev.com/">Vladimir Keleshev</a> • 2026-02-25</p>
+<p>最近有一个编程趋势让我非常惊讶，这种现象在工作中和开源项目中都有发生，人们<em>突然</em>开始这样做：</p>
+<p>好吧，我认为我们需要深呼吸，退一步思考。</p>
+<h2>文档</h2>
+<p>是的，良好的文档<em>确实</em>对 AI 智能体很有价值，尤其是当它不在训练数据集中时。一个好的文档<em>摘要</em>往往更重要，因为它占用的上下文窗口更少。但是……这种文档对人类同样有价值，我们的上下文窗口也是有限的，也能从好的摘要中受益。</p>
+<p>此外，我们应该努力将文档放在人类和 AI 智能体都能轻松发现的地方。<code>README.md</code> 文件就是这样一个选择。</p>
+<p>我知道这涉及一些技术细节，例如，有些工具会预先将 <code>AGENTS.md</code> 这样的文件加载到上下文中，但实际约定变化很快，而且通常是特定于供应商的（即不可依赖），大多数好处可以通过在正确的地方放置"参见 <code>README.md</code>"来获得。</p>
+<h2>工具</h2>
+<p>首先，有主要面向人类的工具，即具有图形用户界面的工具。然后有主要面向 AI 智能体的新型工具，即 MCP 工具。然而，还有一组工具，开发者和 AI 智能体都可以同样使用：命令行工具和 API。它们可脚本化、可组合、面向文本，能够完美地向开发者和 AI 智能体展示功能。为什么不默认使用它们呢？</p>
+<p>我显然偏向命令行，但我也使用一些图形界面工具。然而，对于 MCP，我还没有看到一个案例证明它比命令行工具更优越。也许时间会证明我是错的。</p>
+<p>一个例子：我看到引入了一个 MCP 工具，因为实际的命令行工具执行时间很长，没有产生输出，因此经常被智能体错误地提前终止。这让我想起了另一个也容易犯这种错误的人……就是我！好吧，还有谁，在运行一个新工具时，面对一个挂起的命令行，如果连续 10 秒没有任何反应，不会直接 Ctrl-C 退出呢？</p>
+<p>或者相反——当工具产生大量不必要的输出时，谁不会感到不知所措？我会。同样的事情，这会让 AI 上下文窗口滑动，排除潜在更有用的信息。精神过载，对吧？</p>
+<p>谁喜欢测试执行快速，如果失败，产生的输出能够轻松缩小问题范围？你懂我的意思……对鹅好的对公鹅也好。</p>
+<p>开发新的内部工具？为什么不开发一个 Web 应用……然后看到开发者总是抱怨缺少功能，同时你试图管理需求蔓延。或者先开发 API。更好的是，将其封装成命令行工具，看看开发者和 AI 智能体如何混合、匹配、脚本化和自动化你从未想象过的工作流，并始终领先于他们的需求。</p>
+<h2>让我们总结一下</h2>
+<ol>
+<li>将文档放在人类开发者和 AI 智能体都能预期的地方。例如，放在 <code>README.md</code> 中，而不是 <code>AGENTS.md</code>。</li>
+<li>优先将功能作为命令行工具和 API 暴露，这些工具对开发者和 AI 智能体都同样易于访问，而不是图形界面和 MCP 工具。</li>
+<li>避免在人类和 AI 智能体之间分隔工作流的参数（命令行、环境等），例如，避免 <code>AI=true</code>，优先使用 <code>--quiet</code> 或——<em>更好的是！</em>——在设计工具时考虑有限的上下文/精神过载。</li>
+<li>总体上，避免创建 AI 可以访问但人类难以访问的工作流，反之亦然。</li>
+</ol>
+<hr>
+<p>我通常不会写这样的主题，但这只是我试图将编程实践的趋势转向统一人类和 AI 工作流的呼吁。</p>
+<p>我们之间有足够的相似性来维护相同的文本界面和约定。我们应该尽可能保持互操作性，但我也没有忽视其潜在影响。</p>
+<hr>
           </section>
 
 
           <section class="post-footer" >
 
             <aside class="post-tags">
-<a href="/tag/pelican.html">pelican</a>            </aside>
+<a href="/tag/ai.html">AI</a><a href="/tag/programming.html">programming</a><a href="/tag/anti-pattern.html">anti-pattern</a>            </aside>
 
             <div class="clear"></div>
 
@@ -189,19 +215,11 @@
 
 
           <aside class="post-nav">
-            <a class="post-nav-next" href="/whale-fall.html">
-              <section class="post-nav-teaser">
-                <i class="icon icon-arrow-left"></i>
-                  <h2 class="post-nav-title">鲸落</h2>
-                <p class="post-nav-excerpt">用鲸落比喻描述开源项目废弃后的生态系统演变</p>
-                <p class="post-nav-meta"><time datetime="周五 27 二月 2026">周五 27 二月 2026</time></p>
-              </section>
-            </a>
-            <a class="post-nav-prev" href="/pelican-github-pages-blog.html">
+            <a class="post-nav-prev" href="/cognitive-debt.html">
               <section class="post-nav-teaser">
                 <i class="icon icon-arrow-right"></i>
-                  <h2 class="post-nav-title">Pelican + Github Pages = Own Blogs</h2>
-                <p class="post-nav-excerpt">如何使用 Pelican 和 GitHub Pages 搭建个人博客</p>
+                  <h2 class="post-nav-title">认知债务</h2>
+                <p class="post-nav-excerpt">关于 AI 辅助开发中代码生产速度超过理解速度所带来的认知债务问题</p>
                 <p class="post-nav-meta"><time datetime="周五 27 二月 2026">周五 27 二月 2026</time></p>
               </section>
             </a>

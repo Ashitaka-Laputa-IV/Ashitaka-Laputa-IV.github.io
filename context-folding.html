@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="chinese (simplified)">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>上下文折叠</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="/context-folding.html" rel="canonical" />
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    var siteUrl = '';
+  </script>
+
+  <script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+
+
+
+
+
+
+
+    <meta name="description" content="关于使用多个 AI 实例进行上下文折叠以获得更好结果的方法">
+
+    <meta name="author" content="Ashitaka">
+
+    <meta name="tags" content="AI">
+    <meta name="tags" content="context-folding">
+    <meta name="tags" content="LLM">
+
+
+
+
+<!-- Open Graph -->
+<meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="Ashitaka's Blogs"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="上下文折叠"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="关于使用多个 AI 实例进行上下文折叠以获得更好结果的方法"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="/context-folding.html"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2026-02-27 16:00:00+08:00"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:modified_time" content=""/>
+<meta prefix="og: http://ogp.me/ns#" property="article:author" content="/author/ashitaka.html">
+<meta prefix="og: http://ogp.me/ns#" property="article:section" content="翻译"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="AI"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="context-folding"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="LLM"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:image" content="/theme/images/home-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "上下文折叠",
+  "headline": "上下文折叠",
+  "datePublished": "2026-02-27 16:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Ashitaka",
+    "url": "/author/ashitaka.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/context-folding.html",
+  "description": "关于使用多个 AI 实例进行上下文折叠以获得更好结果的方法"
+}
+</script>
+</head>
+
+
+
+
+
+
+
+<body class="category-template">
+
+<div class="nav-header">
+  <nav class="nav-wrapper" aria-label="Main">
+<ul>
+
+
+</ul>
+<ul class="nav-meta">
+  <li class="nav-search" style="display: none;">
+    <a title="Search">
+      <i class="icon icon-search" aria-hidden="true"></i>
+      <span>Search</span>
+    </a>
+  </li>
+</ul>  </nav>
+
+  <div class="nav-wrapper-control">
+    <div class="inner">
+      <a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>Menu</a>
+      <a class="nav-search" title="Search" role="button" style="display: none;"><i class="icon icon-search" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>
+<div class="nav-close" role="button" aria-label="Close"></div>
+  <section id="wrapper" class="page-wrapper">
+    <!-- Progressbar -->
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="post-header ">
+      <div class="inner">
+        <span class="post-info">
+          <span class="post-type">Article</span>
+          <span class="post-count">翻译</span>
+        </span>
+        <h1 class="post-title">上下文折叠</h1>
+        <div class="post-meta">
+          <div class="post-meta-avatars">
+
+
+            <figure class="post-meta-avatar avatar">
+              <a class="author-avatar" href="/author/ashitaka.html">
+                <img class="author-profile-image" src="" alt="Ashitaka" />
+              </a>
+            </figure>
+          </div>
+
+          <h4 class="post-meta-author">
+            Ashitaka
+          </h4>
+          <time datetime="周五 27 二月 2026">周五 27 二月 2026</time>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+          <section class="post-content">
+            <p>这是我最近发现自己在做的一个有趣动作：</p>
+<ol>
+<li>
+<p><em>遇到复杂的编程挑战</em></p>
+</li>
+<li>
+<p>获取三篇与我问题相关的论文</p>
+</li>
+<li>
+<p>打开三个终端窗口，让不同的 Claude 阅读每篇论文</p>
+</li>
+<li>
+<p>对每篇论文问一些问题</p>
+</li>
+<li>
+<p>将每次对话的摘要保存到 .md 文件。</p>
+</li>
+<li>
+<p>/clear</p>
+</li>
+<li>
+<p>让 Claude 阅读所有三个摘要，生成一个带有比较表的综合分析。</p>
+</li>
+<li>
+<p>保存到 synthesis.md。</p>
+</li>
+<li>
+<p>/clear</p>
+</li>
+<li>
+<p>包含 @synthesis.md 并与 Claude 头脑风暴</p>
+</li>
+<li>
+<p><em>一个解决方案出现</em></p>
+</li>
+</ol>
+<p>这对学习速跑也非常有效。</p>
+<ol>
+<li>
+<p>去 <a href="https://plato.stanford.edu/">plato.stanford.edu</a> 并获取三个不同哲学家的页面（柏拉图、康德、尼采，等等）</p>
+</li>
+<li>
+<p>打开三个终端窗口，让不同的 Claude 阅读每页</p>
+</li>
+<li>
+<p>对每位哲学家问一些问题</p>
+</li>
+<li>
+<p>将每次对话的摘要保存到 .md 文件。</p>
+</li>
+<li>
+<p>/clear</p>
+</li>
+<li>
+<p>让 Claude 阅读所有三个摘要，综合、比较和对比。</p>
+</li>
+<li>
+<p>保存到 synthesis.md。</p>
+</li>
+<li>
+<p>/clear</p>
+</li>
+<li>
+<p>包含 @synthesis.md 并进行对话</p>
+</li>
+</ol>
+<p>（Claude Code 是一个优秀的<a href="https://newsletter.squishy.computer/i/79213755/thinking-with-a-second-brain">思维工具</a>，顺便说一下。）</p>
+<p>[</p>
+<p><img alt="" src="https://substackcdn.com/image/fetch/$s_!F2-z!,w_2400,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3ad14181-7a85-42fc-8ef8-c33ca5fd32df_2240x1400.png"></p>
+<p>](https://substackcdn.com/image/fetch/$s_!F2-z!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3ad14181-7a85-42fc-8ef8-c33ca5fd32df_2240x1400.png)</p>
+<p>Josef Albers，1942。图形设计：神龛</p>
+<p>我认为这个动作是<em>上下文折叠</em>，因为它感觉像烘焙时折叠面团。当我折叠上下文时，我从 AI 获得的结果要好得多，好得多。</p>
+<p>为什么折叠上下文如此有效？嗯，这几乎就像我们在<a href="https://www.anthropic.com/engineering/multi-agent-research-system">手动进行深度研究</a>。每个 Claude 实例都作为研究代理发挥作用。关键是，这些是我们手动指导的研究代理。在每个线程中，我们都在提出问题，提取出对我们更大问题最有意义的上下文维度。这是一种智能压缩，而<a href="https://timkellogg.me/blog/2025/06/15/compression">压缩 = 智能力</a>，或者足够接近。</p>
+<p>上下文折叠也创造了有用的副产品。这些小 markdown 文件是有价值的压缩洞察，你可以在未来的对话中包含它们，用深层上下文背景来注入它们。我们的团队已经开始将它们检入代码库下的 <code>docs</code> 目录中。</p>
+<p>上下文折叠是从 LLM 引发有效行为的一般模式的一个例子。当我们折叠上下文时，我们<strong>发散</strong>，在不同的上下文窗口中探索不同的路径。在探索解决方案空间后，我们<strong>收敛</strong>，比较我们学到的东西，并将所有内容综合在一起。</p>
+<p>Claude Code 的<em>计划模式</em>是这个模式的另一个例子。首先 Claude <strong>发散</strong>，用子代理探索代码库，然后 Claude <strong>收敛</strong>，编写一个综合发现结果。</p>
+<p>[</p>
+<p><img alt="创建选择，然后做出选择" src="https://substackcdn.com/image/fetch/$s_!Ppiq!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7e2da523-34a8-4caa-9dc7-fa70fda082ac_700x500.jpeg" title="Create choices, then make choices"></p>
+<p>](https://substackcdn.com/image/fetch/$s_!Ppiq!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7e2da523-34a8-4caa-9dc7-fa70fda082ac_700x500.jpeg)</p>
+<p>设计师称这个过程为<a href="https://en.wikipedia.org/wiki/Double_Diamond_(design_process_model)">双钻模型</a>。当使用双钻模型时，我们经常做两次，一次用于研究，一次用于开发。今天大多数 AI 工具只做一次（<em>计划模式</em>）。做多次是否有收益？</p>
+<p>控制论学者 <a href="https://en.wikipedia.org/wiki/Design_rationale">Horst Rittel</a> 将双钻模型置于更大的理论框架中。他说设计是<em>"多样性的生成和多样性的减少。"</em></p>
+<p>这里的多样性意味着<em><a href="https://en.wikipedia.org/wiki/Variety_(cybernetics)">控制论多样性</a></em>，即系统可以生成的所有可能行为的集合。</p>
+<blockquote>
+<p><strong>Ashby 的必要多样性定律：</strong> 调节器的多样性必须至少与它调节的系统的多样性一样大。</p>
+</blockquote>
+<p>Ashby 定律告诉我们，解决方案必须至少与问题一样复杂。如果不是，问题会溢出，绕过解决方案，成为外部性。这是有用的信息。它告诉我们，要解决问题，LLM 必须至少与问题一样大。</p>
+<p>而 LLM 确实有很多控制论多样性。一个互联网的价值。这种极端多样性在你运行原始基础模型时显现。你得到的是非人类的、某人通道超维度宇宙恐怖的咆哮。基础模型的多样性远远超出了正常人类行为的范围。</p>
+<p>[</p>
+<p><img alt="Shoggoth 梗子（HP 洛夫克拉夫特遇见 AI）| by Swetlana AI ..." src="https://substackcdn.com/image/fetch/$s_!ct-P!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F526fe074-8061-4a33-8e00-551e53cace06_1007x790.png" title="The Shoggoth Meme (HP Lovecraft Meets AI) | by Swetlana AI ..."></p>
+<p>](https://substackcdn.com/image/fetch/$s_!ct-P!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F526fe074-8061-4a33-8e00-551e53cace06_1007x790.png)</p>
+<p>所以，LLM 有很多多样性。太多的多样性无法适应人类含义的微小参考框架。解决方案？在顶部贴一个笑脸。RLHF 将 LLM 的多样性减少到有意义的范围。</p>
+<p>但 RLHF 几乎<em>太</em>多地减少了多样性。模型带有一个强烈的倾向去<a href="https://www.challies.com/articles/no-mans-sky-and-10000-bowls-of-plain-oatmeal/">寻求燕麦片</a>。它已经失去了必要的多样性来惊喜。</p>
+<blockquote>
+<p>但处于控制中意味着定义将被考虑的范围，即可能的范围。实际上，当我处于控制中时，我将世界限制在我可以想象或允许的范围内……<br>
+<em>(Ranulph Glanville，2019，"设计控制论"）</em></p>
+</blockquote>
+<p>我们可以通过上下文窗口带回一些这种多样性。LLM 通过上下文窗口高度可引导，通过提示，你可以从模型中排序或挑选潜在维度，提取出不同的行为。</p>
+<p>这就是为什么<a href="https://newsletter.squishy.computer/p/feedback-is-all-you-need">将 LLM 置于与工具的循环中</a>让它变得如此聪明。工具向上下文窗口添加上下文多样性，这从模型中引出潜在多样性。模型和外部上下文之间的对话产生了有意义的行为，具有多样性来惊喜。</p>
+<p><a href="https://openclaw.ai/">OpenClaw</a> 是这里的一个极端例子。当你给爪子完全访问你的计算机时，它将高级图灵机的多样性导入代理循环。那是很多多样性，<a href="https://en.wikipedia.org/wiki/Universal_Turing_machine">潜在无界</a>。其中一些多样性是深刻惊喜的，比如<a href="https://youtu.be/4uzGDAoNOZc?si=fehXEVtzE5vjiYVX&amp;t=465">当 OpenClaw 的创建者发现它可以自己弄清楚如何做语音转录时</a>。其中一些多样性是负面惊喜的，比如<a href="https://x.com/summeryue0/status/2025774069124399363">当你要求你的爪子整理你的收件箱，它删除了你所有的电子邮件</a>。无论哪种方式，具有完整 bash 访问的爪子都有足够多的多样性来惊喜。</p>
+<blockquote>
+<p>没有足够多样性来控制系统的巨大好处是，如果我放弃试图控制，我可以发现如果我坚持处于控制中会排除的许多可能性。这些可能性是意外的，在我的参考框架之外，用一个词来说，新颖的。<br>
+<em>(Ranulph Glanville，2019，"设计控制论"）</em></p>
+</blockquote>
+<p>从必要多样性的角度来看，折叠上下文很有道理。我们让我们的代理的理解发散、专业化，并向意外方向旋转。他们理解中的差异、矛盾，是<em>阿尔法</em>，有价值的多样性。</p>
+<blockquote>
+<p>我会自相矛盾吗？<br>
+非常好，那么我自相矛盾，<br>
+（我很大，我包含众多。）</p>
+</blockquote>
+<p>我正在问自己的问题：</p>
+          </section>
+
+
+          <section class="post-footer" >
+
+            <aside class="post-tags">
+<a href="/tag/ai.html">AI</a><a href="/tag/context-folding.html">context-folding</a><a href="/tag/llm.html">LLM</a>            </aside>
+
+            <div class="clear"></div>
+
+
+          </section>
+
+
+          <aside class="post-nav">
+            <a class="post-nav-next" href="/cognitive-debt.html">
+              <section class="post-nav-teaser">
+                <i class="icon icon-arrow-left"></i>
+                  <h2 class="post-nav-title">认知债务</h2>
+                <p class="post-nav-excerpt">关于 AI 辅助开发中代码生产速度超过理解速度所带来的认知债务问题</p>
+                <p class="post-nav-meta"><time datetime="周五 27 二月 2026">周五 27 二月 2026</time></p>
+              </section>
+            </a>
+            <a class="post-nav-prev" href="/one-bite-at-a-time.html">
+              <section class="post-nav-teaser">
+                <i class="icon icon-arrow-right"></i>
+                  <h2 class="post-nav-title">一口一口来</h2>
+                <p class="post-nav-excerpt">如何通过分解大任务为小步骤来完成宏伟目标</p>
+                <p class="post-nav-meta"><time datetime="周五 27 二月 2026">周五 27 二月 2026</time></p>
+              </section>
+            </a>
+            <div class="clear"></div>
+          </aside>
+
+        </div>
+      </article>
+    </main>
+    <div class="nav-footer">
+      <nav class="nav-wrapper" aria-label="Footer">
+        <span class="nav-copy">Ashitaka's Blogs &copy; 2023
+        </span>
+        <span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> &bull; Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> &bull;
+          <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme">
+            <span class="theme-icon"></span><span class="theme-text">System theme</span>
+          </a>
+        </span>
+      </nav>
+    </div>
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script type="text/javascript" src="/theme/js/jquery.fitvids.js"></script>
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+
+  <!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+
+</html>
