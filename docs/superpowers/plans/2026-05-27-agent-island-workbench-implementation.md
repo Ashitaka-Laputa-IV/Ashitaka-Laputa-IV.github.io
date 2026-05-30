@@ -52,6 +52,7 @@
 ## Task 1: Scaffold React/Vite App
 
 **Files:**
+
 - Modify: `index.html`
 - Create: `package.json`
 - Create: `tsconfig.json`
@@ -216,8 +217,15 @@ Write `src/styles.css`:
 
 ```css
 :root {
-  font-family: Nunito, "Noto Sans SC", "Zen Maru Gothic", -apple-system,
-    BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+  font-family:
+    Nunito,
+    "Noto Sans SC",
+    "Zen Maru Gothic",
+    -apple-system,
+    BlinkMacSystemFont,
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
     sans-serif;
   color: #725d42;
   background: #7dc395;
@@ -269,6 +277,7 @@ git commit -m "feat: scaffold React island workbench"
 ## Task 2: Add Content Data
 
 **Files:**
+
 - Create: `src/data/profile.ts`
 
 - [ ] **Step 1: Create typed profile data**
@@ -285,7 +294,13 @@ export type LinkItem = {
 export type DockItem = LinkItem & {
   key: string;
   description: string;
-  color: "app-blue" | "app-yellow" | "app-teal" | "app-pink" | "purple" | "app-green";
+  color:
+    | "app-blue"
+    | "app-yellow"
+    | "app-teal"
+    | "app-pink"
+    | "purple"
+    | "app-green";
   iconName: string;
 };
 
@@ -316,7 +331,6 @@ export const profile = {
     "TypeScript",
     "Node.js",
     "Python",
-    "Workflow",
   ],
 };
 
@@ -361,17 +375,29 @@ export const workbenchTabs = [
   {
     key: "doing",
     label: "现在在做",
-    items: ["整理 agents 入门路线", "把前端经验迁移到 AI 产品", "研究工具调用和工作流编排"],
+    items: [
+      "整理 agents 入门路线",
+      "把前端经验迁移到 AI 产品",
+      "研究工具调用和工作流编排",
+    ],
   },
   {
     key: "writing",
     label: "想写",
-    items: ["从零搭一个 agent", "Dify / Coze 实战对比", "agents 产品里的前端体验"],
+    items: [
+      "从零搭一个 agent",
+      "Dify / Coze 实战对比",
+      "agents 产品里的前端体验",
+    ],
   },
   {
     key: "done",
     label: "已整理",
-    items: ["ai-agents-from-zero 教程仓库", "一些 prompt 和工作流实践", "这个可爱的小岛工作台"],
+    items: [
+      "ai-agents-from-zero 教程仓库",
+      "一些 prompt 和工作流实践",
+      "这个可爱的小岛工作台",
+    ],
   },
 ];
 
@@ -416,6 +442,7 @@ git commit -m "feat: add island profile content"
 ## Task 3: Build React Components
 
 **Files:**
+
 - Modify: `src/App.tsx`
 - Create: `src/components/SiteHeader.tsx`
 - Create: `src/components/Hero.tsx`
@@ -491,7 +518,13 @@ export function SiteHeader() {
       </nav>
       <div className="header-tools">
         <span className="status-pill">{profile.status}</span>
-        <Button type="primary" size="small" onClick={() => window.open(profile.links.github, "_blank", "noopener")}>
+        <Button
+          type="primary"
+          size="small"
+          onClick={() =>
+            window.open(profile.links.github, "_blank", "noopener")
+          }
+        >
           GitHub
         </Button>
       </div>
@@ -524,14 +557,18 @@ export function Hero() {
             <Button
               type="primary"
               size="large"
-              onClick={() => window.open(profile.links.tutorial, "_blank", "noopener")}
+              onClick={() =>
+                window.open(profile.links.tutorial, "_blank", "noopener")
+              }
             >
               查看教程
             </Button>
             <Button
               type="dashed"
               size="large"
-              onClick={() => window.open(profile.links.github, "_blank", "noopener")}
+              onClick={() =>
+                window.open(profile.links.github, "_blank", "noopener")
+              }
             >
               逛逛 GitHub
             </Button>
@@ -623,7 +660,8 @@ export function ProjectCard() {
         <p className="section-kicker">Main project</p>
         <h2>ai-agents-from-zero</h2>
         <p className="section-copy">
-          目前最像“成果”的东西：一份从零开始理解 AI agents 的教程仓库。它不是终点，更像我给自己和后来者铺的一条上岛路线。
+          目前最像“成果”的东西：一份从零开始理解 AI agents
+          的教程仓库。它不是终点，更像我给自己和后来者铺的一条上岛路线。
         </p>
         <div className="project-tags">
           <span>AI Agents</span>
@@ -631,10 +669,20 @@ export function ProjectCard() {
           <span>From Zero</span>
         </div>
         <div className="project-actions">
-          <Button type="primary" onClick={() => window.open(profile.links.tutorial, "_blank", "noopener")}>
+          <Button
+            type="primary"
+            onClick={() =>
+              window.open(profile.links.tutorial, "_blank", "noopener")
+            }
+          >
             打开教程仓库
           </Button>
-          <Button type="dashed" onClick={() => window.open(profile.links.github, "_blank", "noopener")}>
+          <Button
+            type="dashed"
+            onClick={() =>
+              window.open(profile.links.github, "_blank", "noopener")
+            }
+          >
             查看更多代码
           </Button>
         </div>
@@ -753,10 +801,18 @@ export function SiteFooter() {
         <p className="section-kicker">Contact</p>
         <h2>如果你也在折腾 agents，欢迎来岛上串门。</h2>
         <div className="hero-actions">
-          <Button type="primary" onClick={() => window.open(profile.links.github, "_blank", "noopener")}>
+          <Button
+            type="primary"
+            onClick={() =>
+              window.open(profile.links.github, "_blank", "noopener")
+            }
+          >
             GitHub
           </Button>
-          <Button type="dashed" onClick={() => window.location.href = profile.links.email}>
+          <Button
+            type="dashed"
+            onClick={() => (window.location.href = profile.links.email)}
+          >
             邮箱
           </Button>
         </div>
@@ -789,6 +845,7 @@ git commit -m "feat: build agent island workbench sections"
 ## Task 4: Add Cartoon Island Styling
 
 **Files:**
+
 - Modify: `src/styles.css`
 
 - [ ] **Step 1: Replace CSS with full page styling**
@@ -797,8 +854,15 @@ Write `src/styles.css` with page, responsive, and component styling:
 
 ```css
 :root {
-  font-family: Nunito, "Noto Sans SC", "Zen Maru Gothic", -apple-system,
-    BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+  font-family:
+    Nunito,
+    "Noto Sans SC",
+    "Zen Maru Gothic",
+    -apple-system,
+    BlinkMacSystemFont,
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
     sans-serif;
   color: #725d42;
   background: #7dc395;
@@ -817,7 +881,11 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 12% 10%, rgba(255, 244, 186, 0.9) 0 70px, transparent 72px),
+    radial-gradient(
+      circle at 12% 10%,
+      rgba(255, 244, 186, 0.9) 0 70px,
+      transparent 72px
+    ),
     linear-gradient(180deg, #7dc395 0%, #8bd0ad 38%, #f8f8f0 38%, #f8f8f0 100%);
 }
 
@@ -980,8 +1048,7 @@ a {
   padding: 28px 18px;
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.28) 1px, transparent 1px),
-    linear-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px),
-    #82d5bb;
+    linear-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px), #82d5bb;
   background-size: 24px 24px;
 }
 
@@ -1001,7 +1068,9 @@ a {
 
 .dock-link > div {
   min-height: 156px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .dock-link:hover > div {
@@ -1238,6 +1307,7 @@ git commit -m "style: add cartoon island workbench theme"
 ## Task 5: Browser QA and Final Adjustments
 
 **Files:**
+
 - Modify: `src/**/*.tsx` or `src/styles.css` only if QA finds layout defects.
 
 - [ ] **Step 1: Start local dev server**
@@ -1255,6 +1325,7 @@ Expected: Vite prints a local URL such as `http://127.0.0.1:5173/`.
 Open the local URL in the browser at 1440x1000.
 
 Expected:
+
 - Hero is visibly cartoon-like and uses animal island styling.
 - Header, hero, NookPhone dock, project card, workbench, notes, and footer render.
 - No text overlaps or escapes cards.
@@ -1265,6 +1336,7 @@ Expected:
 Open the local URL in the browser at 390x844.
 
 Expected:
+
 - Header stacks cleanly.
 - Hero and NookPhone dock are single-column.
 - App tiles are readable and stable.

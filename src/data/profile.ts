@@ -72,7 +72,6 @@ export const profile = {
     "TypeScript",
     "Node.js",
     "Python",
-    "Workflow",
   ],
 };
 

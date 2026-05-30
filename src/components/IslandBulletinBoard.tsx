@@ -1,7 +1,10 @@
-import { Card, Collapse } from "animal-island-ui";
+import { useState } from "react";
+import { Card } from "animal-island-ui";
 import { bulletinEntries } from "../data/profile";
 
 export function IslandBulletinBoard() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <section className="content-section bulletin-section" id="bulletin">
       <div className="section-heading-center">
@@ -15,12 +18,45 @@ export function IslandBulletinBoard() {
           <span />
           <span />
         </div>
-        <div className="bulletin-note-grid">
-          {bulletinEntries.map((entry) => (
-            <div className="bulletin-note" key={entry.question}>
-              <Collapse question={entry.question} answer={entry.answer} />
-            </div>
-          ))}
+        <div
+          className={`bulletin-note-grid ${
+            openIndex === null ? "" : "has-open-note"
+          }`}
+        >
+          {bulletinEntries.map((entry, index) => {
+            const isOpen = openIndex === index;
+            const answerId = `bulletin-answer-${index}`;
+
+            return (
+              <div
+                className={`bulletin-note ${isOpen ? "is-open" : ""}`}
+                key={entry.question}
+              >
+                <button
+                  type="button"
+                  className="bulletin-note-trigger"
+                  aria-expanded={isOpen}
+                  aria-controls={answerId}
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                >
+                  <span className="bulletin-note-icon" aria-hidden="true">
+                    {isOpen ? "-" : "+"}
+                  </span>
+                  <span className="bulletin-note-question">
+                    {entry.question}
+                  </span>
+                  <span className="bulletin-note-leaf" aria-hidden="true" />
+                </button>
+                <div
+                  className="bulletin-note-answer"
+                  id={answerId}
+                  aria-hidden={!isOpen}
+                >
+                  <p>{entry.answer}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </Card>
     </section>

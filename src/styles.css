@@ -627,9 +627,9 @@ html[data-island-theme="night"] .status-pill {
   gap: 52px;
   align-items: center;
   max-width: 1180px;
-  min-height: calc(100vh - 230px);
+  min-height: calc(100vh - 210px);
   margin: 0 auto;
-  padding: 10px 24px 76px;
+  padding: clamp(16px, 4vh, 48px) 24px clamp(86px, 9vh, 116px);
 }
 
 .hero-side {
@@ -638,10 +638,16 @@ html[data-island-theme="night"] .status-pill {
   justify-items: center;
 }
 
+.hero-copy {
+  align-self: center;
+}
+
 .hero-main-card {
   position: relative;
   overflow: visible;
   isolation: isolate;
+  min-height: 430px;
+  padding-bottom: clamp(28px, 3.2vw, 42px) !important;
 }
 
 .hero-copy h1,
@@ -654,8 +660,9 @@ html[data-island-theme="night"] .status-pill {
 
 .hero-copy h1 {
   max-width: 720px;
-  font-size: clamp(40px, 7vw, 76px);
-  line-height: 1.04;
+  font-size: clamp(42px, 6.7vw, 72px);
+  font-weight: 900;
+  line-height: 1.06;
   text-shadow: 0 4px 0 rgba(189, 174, 160, 0.48);
 }
 
@@ -752,6 +759,14 @@ html[data-island-theme="night"] .site-footer h2 {
   line-height: 1.8;
 }
 
+.hero-subtitle {
+  max-width: 660px;
+  margin: 12px 0 0;
+  font-size: 16.5px;
+  font-weight: 800;
+  line-height: 1.74;
+}
+
 html[data-island-theme="night"] .eyebrow,
 html[data-island-theme="night"] .section-kicker {
   color: #4dded3;
@@ -774,7 +789,7 @@ html[data-island-theme="night"]
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 24px;
+  margin-top: 22px;
 }
 
 .broadcast-copy {
@@ -806,7 +821,7 @@ html[data-island-theme="night"]
 }
 
 .phone-screen {
-  min-height: 560px;
+  min-height: 548px;
   border-radius: 48px;
   padding: 28px 18px;
   background:
@@ -818,7 +833,8 @@ html[data-island-theme="night"]
 .phone-title {
   margin-bottom: 18px;
   color: #725d42;
-  font-size: 24px;
+  font-family: "Noto Sans SC", "Nunito", system-ui, sans-serif;
+  font-size: 22px;
   font-weight: 900;
   text-align: center;
 }
@@ -874,7 +890,9 @@ html[data-island-theme="night"]
 .dock-link strong {
   margin-top: 8px;
   color: #725d42;
-  font-size: 15px;
+  font-family: "Noto Sans SC", "Nunito", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 900;
 }
 
 .dock-link small {
@@ -1047,24 +1065,201 @@ html[data-island-theme="night"] .two-column > div:first-child {
 .bulletin-note-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  padding-top: 16px;
+  align-items: start;
+  gap: 18px 20px;
+  padding-top: 18px;
 }
 
 .bulletin-note {
+  --note-rotate: 0deg;
+  --note-x: 0px;
+  --note-y: 0px;
+  --note-scale: 1;
   border: 2px dashed #d4c4a8;
   border-radius: 18px;
   background: rgba(248, 248, 240, 0.68);
+  min-height: 104px;
   padding: 12px;
   box-shadow: 0 5px 0 rgba(189, 174, 160, 0.32);
+  transform: translate(var(--note-x), var(--note-y)) rotate(var(--note-rotate))
+    scale(var(--note-scale));
+  transform-origin: center top;
+  transition:
+    min-height 0.32s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.24s ease,
+    filter 0.24s ease,
+    box-shadow 0.24s ease,
+    transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .bulletin-note:nth-child(2n) {
-  transform: rotate(0.6deg);
+  --note-rotate: 0.9deg;
+  --note-x: 10px;
+  --note-y: 10px;
 }
 
 .bulletin-note:nth-child(2n + 1) {
-  transform: rotate(-0.5deg);
+  --note-rotate: -0.85deg;
+  --note-x: -10px;
+  --note-y: -3px;
+}
+
+.bulletin-note:nth-child(3) {
+  --note-rotate: 0.72deg;
+  --note-x: 8px;
+  --note-y: 9px;
+}
+
+.bulletin-note:nth-child(4) {
+  --note-rotate: -0.72deg;
+  --note-x: -8px;
+  --note-y: -5px;
+}
+
+.bulletin-note.is-open {
+  --note-scale: 1.025;
+  z-index: 2;
+  min-height: 206px;
+  background:
+    radial-gradient(
+      circle at 88% 18%,
+      rgba(255, 240, 184, 0.42) 0 22px,
+      transparent 23px
+    ),
+    rgba(255, 252, 238, 0.94);
+  box-shadow:
+    0 8px 0 rgba(189, 174, 160, 0.34),
+    0 16px 26px rgba(114, 93, 66, 0.1);
+}
+
+.bulletin-note-grid.has-open-note .bulletin-note:not(.is-open) {
+  --note-scale: 0.965;
+  opacity: 0.62;
+  filter: saturate(0.76);
+}
+
+.bulletin-note-trigger {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 14px;
+  align-items: center;
+  width: 100%;
+  min-height: 64px;
+  padding: 12px 20px;
+  color: #725d42;
+  font-family: inherit;
+  text-align: left;
+  background: rgba(248, 248, 240, 0.95);
+  border: 2px solid #aaa69d;
+  border-radius: 18px;
+  box-shadow: 0 3px 0 rgba(159, 146, 125, 0.55);
+  appearance: none;
+  cursor: pointer;
+  transition:
+    background 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.22s ease;
+}
+
+.bulletin-note-trigger:hover {
+  border-color: #50b9ab;
+  transform: translateY(-1px);
+}
+
+.bulletin-note-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: #fff9e6;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1;
+  background: #19c8b9;
+  border-radius: 50%;
+  box-shadow: 0 3px 0 rgba(14, 167, 156, 0.35);
+}
+
+.bulletin-note-question {
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.bulletin-note-leaf {
+  position: relative;
+  width: 24px;
+  height: 20px;
+  opacity: 0.72;
+}
+
+.bulletin-note-leaf::before,
+.bulletin-note-leaf::after {
+  position: absolute;
+  content: "";
+  background: #82d5bb;
+}
+
+.bulletin-note-leaf::before {
+  right: 3px;
+  bottom: 2px;
+  width: 17px;
+  height: 11px;
+  border-radius: 100% 0 100% 0;
+  transform: rotate(-28deg);
+}
+
+.bulletin-note-leaf::after {
+  right: 1px;
+  bottom: 3px;
+  width: 17px;
+  height: 2px;
+  border-radius: 999px;
+  transform: rotate(-42deg);
+}
+
+.bulletin-note-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.32s ease,
+    opacity 0.22s ease,
+    padding 0.32s ease;
+}
+
+.bulletin-note-answer > p {
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  color: #725d42;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.78;
+}
+
+.bulletin-note.is-open .bulletin-note-trigger {
+  border-color: #50b9ab;
+  background: #fffdf4;
+  box-shadow: 0 4px 0 rgba(80, 185, 171, 0.32);
+}
+
+.bulletin-note.is-open .bulletin-note-icon {
+  background: #50b9ab;
+  transform: rotate(180deg);
+}
+
+.bulletin-note.is-open .bulletin-note-leaf {
+  opacity: 1;
+  transform: rotate(10deg);
+}
+
+.bulletin-note.is-open .bulletin-note-answer {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  padding: 14px 10px 4px;
 }
 
 html[data-island-theme="night"] .two-column > :nth-child(2) {
@@ -1127,6 +1322,29 @@ html[data-island-theme="night"] .bulletin-note {
   border-color: rgba(255, 240, 184, 0.34);
   background: rgba(248, 244, 232, 0.92);
   box-shadow: 0 5px 0 rgba(18, 24, 43, 0.28);
+}
+
+html[data-island-theme="night"] .bulletin-note.is-open {
+  background:
+    radial-gradient(
+      circle at 88% 18%,
+      rgba(255, 214, 107, 0.25) 0 22px,
+      transparent 23px
+    ),
+    rgba(248, 244, 232, 0.98);
+  box-shadow:
+    0 8px 0 rgba(18, 24, 43, 0.32),
+    0 0 26px rgba(255, 240, 184, 0.13);
+}
+
+html[data-island-theme="night"] .bulletin-note-trigger {
+  border-color: rgba(114, 93, 66, 0.56);
+  background: rgba(255, 252, 238, 0.92);
+}
+
+html[data-island-theme="night"] .bulletin-note.is-open .bulletin-note-trigger {
+  border-color: rgba(80, 185, 171, 0.82);
+  background: rgba(255, 252, 238, 0.98);
 }
 
 html[data-island-theme="night"] .project-section > div,
@@ -3211,10 +3429,24 @@ html[data-island-theme="night"] .mascot-placeholder {
   .hero-section {
     min-height: auto;
     padding-top: 18px;
+    padding-bottom: 76px;
   }
 
   .hero-side {
+    align-self: center;
     gap: 24px;
+  }
+
+  .hero-copy {
+    align-self: center;
+  }
+
+  .hero-main-card {
+    min-height: auto;
+  }
+
+  .nook-phone {
+    transform: none;
   }
 
   .hero-mood-panel {
@@ -3223,6 +3455,22 @@ html[data-island-theme="night"] .mascot-placeholder {
     margin-bottom: 18px;
     margin-right: 0;
     transform: rotate(-1deg);
+  }
+
+  .bulletin-note-grid {
+    gap: 14px;
+  }
+
+  .bulletin-note,
+  .bulletin-note:nth-child(2n),
+  .bulletin-note:nth-child(2n + 1) {
+    --note-rotate: 0deg;
+    --note-x: 0px;
+    --note-y: 0px;
+  }
+
+  .bulletin-note.is-open {
+    min-height: 220px;
   }
 
   .incubator-result-card {
@@ -3280,7 +3528,8 @@ html[data-island-theme="night"] .mascot-placeholder {
   }
 
   .hero-copy h1 {
-    font-size: 38px;
+    font-size: 36px;
+    line-height: 1.12;
   }
 
   .hero-actions {
