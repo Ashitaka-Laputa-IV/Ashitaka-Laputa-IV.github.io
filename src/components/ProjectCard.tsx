@@ -4,7 +4,7 @@ import { profile } from "../data/profile";
 export function ProjectCard() {
   return (
     <section className="content-section project-section" id="project">
-      <Card type="title" color="app-blue">
+      <Card type="dashed" className="project-card">
         <p className="section-kicker">Main project</p>
         <h2>ai-agents-from-zero</h2>
         <p className="section-copy">

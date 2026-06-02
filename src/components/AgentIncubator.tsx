@@ -9,7 +9,7 @@ type IncubatorOption = {
 };
 
 type IncubatorGroup = {
-  key: "goal" | "tool" | "memory" | "workflow" | "output";
+  key: "goal" | "tool" | "memory" | "workflow";
   label: string;
   options: IncubatorOption[];
 };
@@ -111,30 +111,6 @@ const incubatorGroups: IncubatorGroup[] = [
       },
     ],
   },
-  {
-    key: "output",
-    label: "输出方式",
-    options: [
-      {
-        key: "map",
-        label: "路线图",
-        description: "输出步骤、风险和下一步",
-        code: "route_map",
-      },
-      {
-        key: "board",
-        label: "任务板",
-        description: "输出待办、状态和工具清单",
-        code: "task_board",
-      },
-      {
-        key: "snippet",
-        label: "伪代码",
-        description: "输出可继续改造的 agent 草图",
-        code: "pseudo_code",
-      },
-    ],
-  },
 ];
 
 const initialSelections = incubatorGroups.reduce(
@@ -169,7 +145,6 @@ export function AgentIncubator() {
   tools: ["${selectedOptions.tool.code}"],
   memory: "${selectedOptions.memory.code}",
   workflow: "${selectedOptions.workflow.code}",
-  output: "${selectedOptions.output.code}",
 });
 
 agentSketch.whenStuck(() => askHuman("这一步要不要换条航线？"));`;
@@ -236,10 +211,6 @@ agentSketch.whenStuck(() => askHuman("这一步要不要换条航线？"));`;
             <div>
               <span>工作流</span>
               <strong>{selectedOptions.workflow.label}</strong>
-            </div>
-            <div>
-              <span>输出</span>
-              <strong>{selectedOptions.output.label}</strong>
             </div>
           </div>
           <CodeBlock code={agentSnippet} className="local-code-block" />
