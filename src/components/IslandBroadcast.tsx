@@ -61,6 +61,7 @@ export function IslandBroadcast() {
       open={open}
       title="小岛广播"
       width={520}
+      className="island-broadcast-modal"
       onClose={closeBroadcast}
       onOk={closeBroadcast}
       typewriter={false}
@@ -70,11 +71,15 @@ export function IslandBroadcast() {
         </Button>
       }
     >
-      <div className="broadcast-copy">
-        <Typewriter speed={42} trigger={open}>
-          {greeting}。今日任务：继续给 agents
-          搭桥，把混乱的问题做成会发光的小工具。
-        </Typewriter>
+      <div className="broadcast-copy" aria-live="polite">
+        <span className="broadcast-stamp">Today's island note</span>
+        <p>
+          <Typewriter speed={42} trigger={open}>
+            {greeting}。今日任务：继续给 agents
+            搭桥，把混乱的问题做成会发光的小工具。
+          </Typewriter>
+        </p>
+        <span className="broadcast-shell" aria-hidden="true" />
       </div>
     </Modal>
   );
