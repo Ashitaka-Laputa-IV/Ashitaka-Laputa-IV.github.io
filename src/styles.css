@@ -1075,6 +1075,7 @@ html[data-island-theme="night"] .two-column > div:first-child {
   --note-x: 0px;
   --note-y: 0px;
   --note-scale: 1;
+  position: relative;
   border: 2px dashed #d4c4a8;
   border-radius: 18px;
   background: rgba(248, 248, 240, 0.68);
@@ -1092,6 +1093,51 @@ html[data-island-theme="night"] .two-column > div:first-child {
     transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+.bulletin-note::before,
+.bulletin-note::after {
+  position: absolute;
+  z-index: 1;
+  content: "";
+  pointer-events: none;
+}
+
+.bulletin-note::before {
+  top: -12px;
+  right: 38px;
+  width: 34px;
+  height: 34px;
+  border: 3px solid rgba(255, 252, 238, 0.94);
+  border-radius: 46% 54% 48% 52%;
+  background:
+    radial-gradient(circle at 34% 42%, #725d42 0 2px, transparent 3px),
+    radial-gradient(circle at 66% 42%, #725d42 0 2px, transparent 3px),
+    radial-gradient(
+      circle at 26% 60%,
+      rgba(247, 154, 179, 0.62) 0 4px,
+      transparent 5px
+    ),
+    radial-gradient(
+      circle at 74% 60%,
+      rgba(247, 154, 179, 0.62) 0 4px,
+      transparent 5px
+    ),
+    #fff4f3;
+  box-shadow: 0 4px 0 rgba(189, 174, 160, 0.36);
+  transform: rotate(-8deg);
+}
+
+.bulletin-note::after {
+  top: 15px;
+  right: 51px;
+  width: 12px;
+  height: 5px;
+  border: 2px solid #725d42;
+  border-top: 0;
+  border-radius: 0 0 999px 999px;
+  opacity: 0.72;
+  transform: rotate(-7deg);
+}
+
 .bulletin-note:nth-child(2n) {
   --note-rotate: 0.9deg;
   --note-x: 10px;
@@ -1104,16 +1150,120 @@ html[data-island-theme="night"] .two-column > div:first-child {
   --note-y: -3px;
 }
 
+.bulletin-note:nth-child(2)::before {
+  top: -10px;
+  right: 54px;
+  border-radius: 44% 56% 52% 48%;
+  background:
+    radial-gradient(circle at 34% 42%, #725d42 0 2px, transparent 3px),
+    radial-gradient(circle at 66% 42%, #725d42 0 2px, transparent 3px),
+    linear-gradient(
+      135deg,
+      transparent 0 18%,
+      #6eb8df 19% 34%,
+      transparent 35%
+    ),
+    linear-gradient(
+      225deg,
+      transparent 0 18%,
+      #6eb8df 19% 34%,
+      transparent 35%
+    ),
+    #eef9ff;
+  transform: rotate(7deg);
+}
+
+.bulletin-note:nth-child(2)::after {
+  top: -1px;
+  right: 37px;
+  width: 16px;
+  height: 16px;
+  border: 0;
+  border-radius: 50%;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 44%,
+      #6eb8df 45% 55%,
+      transparent 56%
+    ),
+    linear-gradient(
+      0deg,
+      transparent 44%,
+      #6eb8df 45% 55%,
+      transparent 56%
+    );
+  opacity: 0.82;
+  transform: rotate(18deg);
+}
+
 .bulletin-note:nth-child(3) {
   --note-rotate: 0.72deg;
   --note-x: 8px;
   --note-y: 9px;
 }
 
+.bulletin-note:nth-child(3)::before {
+  top: -9px;
+  right: 34px;
+  border-radius: 55% 45% 52% 48%;
+  background:
+    radial-gradient(circle at 36% 40%, #725d42 0 2px, transparent 3px),
+    radial-gradient(circle at 64% 40%, #725d42 0 2px, transparent 3px),
+    radial-gradient(circle at 50% 64%, #725d42 0 2px, transparent 3px),
+    #fff3a3;
+  transform: rotate(-13deg);
+}
+
+.bulletin-note:nth-child(3)::after {
+  top: -6px;
+  right: 25px;
+  width: 7px;
+  height: 24px;
+  border: 0;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 50% 88%, #ffcf5b 0 3px, transparent 4px),
+    linear-gradient(#ffcf5b 0 0) center 0 / 5px 14px no-repeat;
+  opacity: 0.92;
+  transform: rotate(15deg);
+}
+
 .bulletin-note:nth-child(4) {
   --note-rotate: -0.72deg;
   --note-x: -8px;
   --note-y: -5px;
+}
+
+.bulletin-note:nth-child(4)::before {
+  top: -13px;
+  right: 58px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 42%, #725d42 0 2px, transparent 3px),
+    radial-gradient(circle at 68% 42%, #725d42 0 2px, transparent 3px),
+    linear-gradient(
+      90deg,
+      #fff4f3 0 34%,
+      #eef9ff 35% 66%,
+      #fff3a3 67% 100%
+    );
+  transform: rotate(9deg);
+}
+
+.bulletin-note:nth-child(4)::after {
+  top: -2px;
+  right: 40px;
+  width: 18px;
+  height: 11px;
+  border: 0;
+  border-radius: 999px 999px 8px 8px;
+  background:
+    radial-gradient(circle at 28% 48%, #725d42 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 48%, #725d42 0 2px, transparent 3px),
+    #82d5bb;
+  opacity: 0.88;
+  transform: rotate(-10deg);
 }
 
 .bulletin-note.is-open {
@@ -1322,6 +1472,17 @@ html[data-island-theme="night"] .bulletin-note {
   border-color: rgba(255, 240, 184, 0.34);
   background: rgba(248, 244, 232, 0.92);
   box-shadow: 0 5px 0 rgba(18, 24, 43, 0.28);
+}
+
+html[data-island-theme="night"] .bulletin-note::before {
+  border-color: rgba(255, 240, 184, 0.82);
+  box-shadow:
+    0 4px 0 rgba(18, 24, 43, 0.26),
+    0 0 16px rgba(255, 240, 184, 0.16);
+}
+
+html[data-island-theme="night"] .bulletin-note::after {
+  filter: drop-shadow(0 0 6px rgba(255, 240, 184, 0.16));
 }
 
 html[data-island-theme="night"] .bulletin-note.is-open {
@@ -3564,6 +3725,28 @@ html[data-island-theme="night"] .mascot-placeholder {
     --note-rotate: 0deg;
     --note-x: 0px;
     --note-y: 0px;
+  }
+
+  .bulletin-note::before {
+    right: 28px;
+    transform: rotate(-5deg) scale(0.9);
+  }
+
+  .bulletin-note::after {
+    right: 41px;
+    transform: rotate(-7deg) scale(0.9);
+  }
+
+  .bulletin-note:nth-child(2)::before,
+  .bulletin-note:nth-child(3)::before,
+  .bulletin-note:nth-child(4)::before {
+    right: 28px;
+  }
+
+  .bulletin-note:nth-child(2)::after,
+  .bulletin-note:nth-child(3)::after,
+  .bulletin-note:nth-child(4)::after {
+    right: 41px;
   }
 
   .bulletin-note.is-open {
