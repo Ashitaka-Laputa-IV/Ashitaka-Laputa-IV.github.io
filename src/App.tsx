@@ -6,6 +6,7 @@ import { FriendLinks } from "./components/FriendLinks";
 import { Hero } from "./components/Hero";
 import { IslandBulletinBoard } from "./components/IslandBulletinBoard";
 import { IslandBroadcast } from "./components/IslandBroadcast";
+import { IslandDecorLayer } from "./components/IslandDecorLayer";
 import { IslandMascot } from "./components/IslandMascot";
 import { NotesPreview } from "./components/NotesPreview";
 import { ProjectCard } from "./components/ProjectCard";
@@ -132,6 +133,7 @@ export default function App() {
             <span className="celestial-ripple celestial-ripple-b" />
           </div>
         ) : null}
+        <IslandDecorLayer />
         <SiteHeader
           theme={theme}
           onThemeToggle={handleThemeToggle}

@@ -185,6 +185,493 @@ html[data-island-theme="night"] .island-page::after {
   z-index: 1;
 }
 
+.island-decor-layer {
+  --decor-ink: #6d453a;
+  --decor-leaf-line: rgba(96, 150, 72, 0.48);
+  --decor-trunk-line: rgba(96, 54, 42, 0.58);
+  --decor-flower-core: #fff176;
+
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.decor-svg,
+.decor-firefly {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+}
+
+.decor-cloud {
+  color: rgba(255, 255, 244, 0.64);
+  filter: drop-shadow(0 10px 16px rgba(86, 135, 99, 0.12));
+  transform-origin: center;
+  animation: decor-cloud-drift 18s ease-in-out infinite alternate;
+}
+
+.decor-cloud-a {
+  top: clamp(142px, 19vh, 220px);
+  left: clamp(18px, 5vw, 86px);
+  width: clamp(88px, 12vw, 166px);
+}
+
+.decor-cloud-b {
+  top: clamp(238px, 30vh, 330px);
+  right: clamp(110px, 18vw, 280px);
+  width: clamp(70px, 9vw, 122px);
+  opacity: 0.72;
+  animation-delay: -8s;
+}
+
+.decor-cloud-c {
+  top: clamp(720px, 82vh, 910px);
+  right: clamp(32px, 9vw, 150px);
+  width: clamp(96px, 14vw, 170px);
+  opacity: 0.56;
+  animation-delay: -4s;
+}
+
+.decor-bush {
+  color: #b9e98d;
+  opacity: 0.82;
+  filter: drop-shadow(0 8px 0 rgba(97, 128, 72, 0.16));
+}
+
+.decor-bush-left-hero {
+  top: clamp(230px, 28vh, 360px);
+  left: clamp(-128px, -7vw, -72px);
+  width: clamp(170px, 20vw, 270px);
+  transform: rotate(8deg);
+}
+
+.decor-bush-right-hero {
+  top: clamp(360px, 48vh, 560px);
+  right: clamp(-140px, -8vw, -84px);
+  width: clamp(190px, 21vw, 300px);
+  transform: rotate(-7deg) scaleX(-1);
+}
+
+.decor-bush-left-board {
+  top: clamp(1040px, 118vh, 1320px);
+  left: clamp(-150px, -8vw, -92px);
+  width: clamp(210px, 24vw, 340px);
+  transform: rotate(-4deg);
+}
+
+.decor-bush-right-notes {
+  top: clamp(2120px, 248vh, 2720px);
+  right: clamp(-170px, -10vw, -104px);
+  width: clamp(220px, 26vw, 360px);
+  transform: rotate(5deg) scaleX(-1);
+}
+
+.decor-bush-left-incubator {
+  top: clamp(2940px, 346vh, 3600px);
+  left: clamp(-168px, -10vw, -104px);
+  width: clamp(220px, 25vw, 360px);
+  opacity: 0.72;
+  transform: rotate(7deg);
+}
+
+.decor-bush-right-incubator {
+  top: clamp(3760px, 438vh, 4680px);
+  right: clamp(-188px, -11vw, -118px);
+  width: clamp(240px, 28vw, 390px);
+  opacity: 0.68;
+  transform: rotate(-6deg) scaleX(-1);
+}
+
+.decor-tree {
+  color: #c28d66;
+  opacity: 0.72;
+  filter: drop-shadow(0 9px 0 rgba(94, 64, 45, 0.12));
+}
+
+.decor-tree-right {
+  top: clamp(1260px, 146vh, 1620px);
+  right: clamp(-92px, -5vw, -48px);
+  width: clamp(104px, 12vw, 172px);
+  transform: rotate(2deg);
+}
+
+.decor-tree-left-lower {
+  top: clamp(4320px, 506vh, 5480px);
+  left: clamp(-74px, -4vw, -38px);
+  width: clamp(104px, 12vw, 168px);
+  opacity: 0.52;
+  transform: rotate(-3deg) scaleX(-1);
+}
+
+.decor-flower {
+  color: #f5a3b7;
+  filter: drop-shadow(0 5px 0 rgba(109, 69, 58, 0.12));
+  transform-origin: bottom center;
+  animation: decor-flower-sway 4.8s ease-in-out infinite;
+}
+
+.decor-flower-a {
+  top: clamp(720px, 78vh, 880px);
+  left: clamp(24px, 3vw, 58px);
+  width: 48px;
+  transform: rotate(-10deg);
+}
+
+.decor-flower-b {
+  top: clamp(1010px, 112vh, 1250px);
+  right: clamp(24px, 5vw, 82px);
+  width: 40px;
+  color: #ffe176;
+  animation-delay: -1.6s;
+}
+
+.decor-flower-c {
+  top: clamp(1640px, 190vh, 1980px);
+  left: clamp(30px, 6vw, 116px);
+  width: 42px;
+  color: #b997e9;
+  animation-delay: -2.4s;
+}
+
+.decor-flower-d {
+  top: clamp(2480px, 292vh, 3100px);
+  right: clamp(56px, 9vw, 172px);
+  width: 46px;
+  color: #ff9d92;
+  animation-delay: -0.8s;
+}
+
+.decor-flower-e {
+  top: clamp(3060px, 358vh, 3740px);
+  left: clamp(84px, 10vw, 180px);
+  width: 38px;
+  color: #ffe176;
+  animation-delay: -3.1s;
+}
+
+.decor-flower-f {
+  top: clamp(3660px, 428vh, 4560px);
+  right: clamp(70px, 11vw, 190px);
+  width: 44px;
+  color: #f5a3b7;
+  animation-delay: -1.2s;
+}
+
+.decor-flower-g {
+  top: clamp(4660px, 544vh, 5840px);
+  left: clamp(56px, 8vw, 144px);
+  width: 46px;
+  color: #b997e9;
+  animation-delay: -2.7s;
+}
+
+.decor-mushroom {
+  color: #ffd581;
+  opacity: 0.84;
+  filter: drop-shadow(0 6px 0 rgba(109, 69, 58, 0.12));
+  transform-origin: bottom center;
+  animation: decor-mushroom-bob 6.2s ease-in-out infinite;
+}
+
+.decor-mushroom-a {
+  top: clamp(910px, 104vh, 1120px);
+  right: clamp(102px, 12vw, 230px);
+  width: 54px;
+}
+
+.decor-mushroom-b {
+  top: clamp(1880px, 220vh, 2260px);
+  left: clamp(84px, 12vw, 230px);
+  width: 62px;
+  color: #f2b27a;
+  animation-delay: -2.2s;
+}
+
+.decor-mushroom-c {
+  top: clamp(3260px, 382vh, 3980px);
+  right: clamp(70px, 12vw, 220px);
+  width: 58px;
+  color: #ffd581;
+  animation-delay: -4s;
+}
+
+.decor-mushroom-d {
+  top: clamp(5120px, 598vh, 6380px);
+  right: clamp(92px, 15vw, 260px);
+  width: 54px;
+  color: #f2b27a;
+  animation-delay: -1.4s;
+}
+
+.decor-grass {
+  color: #9fda83;
+  opacity: 0.66;
+  filter: drop-shadow(0 7px 0 rgba(97, 128, 72, 0.11));
+  transform-origin: bottom center;
+  animation: decor-grass-sway 7s ease-in-out infinite;
+}
+
+.decor-grass-a {
+  top: clamp(2760px, 324vh, 3380px);
+  left: clamp(60px, 9vw, 160px);
+  width: clamp(120px, 13vw, 190px);
+  transform: rotate(-4deg);
+}
+
+.decor-grass-b {
+  top: clamp(3500px, 410vh, 4320px);
+  right: clamp(32px, 6vw, 110px);
+  width: clamp(130px, 15vw, 210px);
+  transform: rotate(5deg) scaleX(-1);
+  animation-delay: -2.8s;
+}
+
+.decor-grass-c {
+  top: clamp(4860px, 568vh, 6100px);
+  left: clamp(140px, 18vw, 300px);
+  width: clamp(112px, 12vw, 180px);
+  opacity: 0.54;
+  transform: rotate(3deg);
+  animation-delay: -4.2s;
+}
+
+.decor-shell {
+  color: #ffe7a9;
+  opacity: 0.78;
+  filter: drop-shadow(0 5px 0 rgba(109, 69, 58, 0.1));
+  transform-origin: bottom center;
+  animation: decor-shell-bob 8s ease-in-out infinite;
+}
+
+.decor-shell-a {
+  top: clamp(3020px, 354vh, 3700px);
+  right: clamp(185px, 21vw, 360px);
+  width: 50px;
+  transform: rotate(10deg);
+}
+
+.decor-shell-b {
+  top: clamp(4020px, 470vh, 5000px);
+  left: clamp(150px, 18vw, 290px);
+  width: 56px;
+  color: #fff0c8;
+  animation-delay: -2.6s;
+}
+
+.decor-shell-c {
+  top: clamp(5340px, 624vh, 6640px);
+  right: clamp(28px, 8vw, 150px);
+  width: 52px;
+  color: #ffd8c5;
+  animation-delay: -5s;
+}
+
+.decor-firefly {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #fff0a6;
+  box-shadow:
+    0 0 0 5px rgba(255, 240, 166, 0.12),
+    0 0 18px rgba(255, 240, 166, 0.62);
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+.decor-firefly-a {
+  top: 480px;
+  left: 8vw;
+}
+
+.decor-firefly-b {
+  top: 760px;
+  right: 10vw;
+}
+
+.decor-firefly-c {
+  top: 1180px;
+  left: 16vw;
+}
+
+.decor-firefly-d {
+  top: 1640px;
+  right: 18vw;
+}
+
+.decor-firefly-e {
+  top: 2260px;
+  left: 10vw;
+}
+
+.decor-firefly-f {
+  top: 2860px;
+  right: 8vw;
+}
+
+.decor-firefly-g {
+  top: 3380px;
+  left: 12vw;
+}
+
+.decor-firefly-h {
+  top: 3920px;
+  right: 16vw;
+}
+
+.decor-firefly-i {
+  top: 4740px;
+  left: 20vw;
+}
+
+.decor-firefly-j {
+  top: 5480px;
+  right: 10vw;
+}
+
+html[data-island-theme="night"] .island-decor-layer {
+  --decor-ink: rgba(255, 240, 184, 0.62);
+  --decor-leaf-line: rgba(184, 240, 255, 0.22);
+  --decor-trunk-line: rgba(255, 240, 184, 0.24);
+}
+
+html[data-island-theme="night"] .decor-cloud {
+  color: rgba(184, 240, 255, 0.1);
+  filter: none;
+}
+
+html[data-island-theme="night"] .decor-bush {
+  color: rgba(42, 91, 86, 0.5);
+  opacity: 0.58;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.16));
+}
+
+html[data-island-theme="night"] .decor-tree {
+  color: rgba(97, 73, 76, 0.66);
+  opacity: 0.5;
+}
+
+html[data-island-theme="night"] .decor-flower,
+html[data-island-theme="night"] .decor-mushroom,
+html[data-island-theme="night"] .decor-grass,
+html[data-island-theme="night"] .decor-shell {
+  opacity: 0.24;
+  filter: none;
+}
+
+html[data-island-theme="night"] .decor-firefly {
+  animation: decor-firefly-glow 5.8s ease-in-out infinite;
+}
+
+html[data-island-theme="night"] .decor-firefly-b {
+  animation-delay: -2.2s;
+}
+
+html[data-island-theme="night"] .decor-firefly-c {
+  animation-delay: -4s;
+}
+
+html[data-island-theme="night"] .decor-firefly-d {
+  animation-delay: -1.1s;
+}
+
+html[data-island-theme="night"] .decor-firefly-e {
+  animation-delay: -3.4s;
+}
+
+html[data-island-theme="night"] .decor-firefly-f {
+  animation-delay: -0.6s;
+}
+
+html[data-island-theme="night"] .decor-firefly-g {
+  animation-delay: -4.8s;
+}
+
+html[data-island-theme="night"] .decor-firefly-h {
+  animation-delay: -1.7s;
+}
+
+html[data-island-theme="night"] .decor-firefly-i {
+  animation-delay: -3s;
+}
+
+html[data-island-theme="night"] .decor-firefly-j {
+  animation-delay: -5.3s;
+}
+
+@keyframes decor-cloud-drift {
+  0% {
+    transform: translate3d(-8px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(12px, 6px, 0);
+  }
+}
+
+@keyframes decor-flower-sway {
+  0%,
+  100% {
+    transform: rotate(-7deg);
+  }
+
+  50% {
+    transform: rotate(7deg);
+  }
+}
+
+@keyframes decor-mushroom-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+}
+
+@keyframes decor-grass-sway {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-4px) rotate(3deg);
+  }
+}
+
+@keyframes decor-shell-bob {
+  0%,
+  100% {
+    transform: translateY(0) rotate(6deg);
+  }
+
+  50% {
+    transform: translateY(-4px) rotate(-4deg);
+  }
+}
+
+@keyframes decor-firefly-glow {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: translate3d(0, 0, 0) scale(0.8);
+  }
+
+  45% {
+    opacity: 1;
+    transform: translate3d(12px, -18px, 0) scale(1.2);
+  }
+
+  70% {
+    opacity: 0.45;
+    transform: translate3d(-8px, -10px, 0) scale(0.94);
+  }
+}
+
 .celestial-transition {
   position: fixed;
   inset: 0;
@@ -4016,7 +4503,13 @@ html[data-island-theme="night"] .mascot-placeholder {
   .mascot-stage,
   .mascot-shadow,
   .mascot-eye,
-  .mascot-sparkle {
+  .mascot-sparkle,
+  .decor-cloud,
+  .decor-flower,
+  .decor-mushroom,
+  .decor-grass,
+  .decor-shell,
+  .decor-firefly {
     animation: none;
   }
 }
@@ -4092,6 +4585,32 @@ html[data-island-theme="night"] .mascot-placeholder {
 
   .island-loading-surface .illustration {
     width: 150px !important;
+  }
+
+  .decor-bush-left-hero,
+  .decor-bush-right-hero,
+  .decor-tree-right {
+    opacity: 0.34;
+  }
+
+  .decor-bush-left-board,
+  .decor-bush-right-notes,
+  .decor-bush-left-incubator,
+  .decor-bush-right-incubator,
+  .decor-cloud-b,
+  .decor-cloud-c,
+  .decor-flower-c,
+  .decor-flower-d,
+  .decor-flower-f,
+  .decor-flower-g,
+  .decor-mushroom-b,
+  .decor-mushroom-d,
+  .decor-grass-b,
+  .decor-grass-c,
+  .decor-shell-b,
+  .decor-shell-c,
+  .decor-tree-left-lower {
+    display: none;
   }
 
   .island-mascot {
