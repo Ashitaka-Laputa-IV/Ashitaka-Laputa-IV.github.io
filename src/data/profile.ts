@@ -48,7 +48,7 @@ export const profile = {
   name: "Ashitaka的小岛工作台",
   title: "Agent 工程师的小岛工作台",
   subtitle:
-    "这里是一座给 AI agents、前端手艺和奇思妙想停靠的小岛。我把教程、实验、失败日志和发光的念头都晒在海风里，慢慢造一间可以招待后来者的工具屋。",
+    "这是一座Ashitaka幻想岛屿, 记录着自己学习, 实验抑或感想. 当你造访于此, 就知道这个开源的世界Ashitaka来过.",
   status: "Island dream lab online",
   links: {
     github: "https://github.com/Ashitaka-Laputa-IV",

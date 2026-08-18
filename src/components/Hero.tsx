@@ -27,15 +27,6 @@ export function Hero() {
           <p className="hero-subtitle">{profile.subtitle}</p>
           <div className="hero-actions">
             <Button
-              type="primary"
-              size="large"
-              onClick={() =>
-                window.open(profile.links.tutorial, "_blank", "noopener")
-              }
-            >
-              查看教程
-            </Button>
-            <Button
               type="dashed"
               size="large"
               onClick={() =>
