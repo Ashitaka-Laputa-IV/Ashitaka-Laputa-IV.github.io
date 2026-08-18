@@ -43,7 +43,6 @@ export const profile = {
   status: "Island dream lab online",
   links: {
     github: "https://github.com/Ashitaka-Laputa-IV",
-    tutorial: "https://github.com/didilili/ai-agents-from-zero",
     email: "mailto:dili@outlook.com",
   },
   avatar: "https://github.com/Ashitaka-Laputa-IV.png",
