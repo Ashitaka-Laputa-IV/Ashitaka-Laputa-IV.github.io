@@ -2224,7 +2224,6 @@ html[data-island-theme="night"] .bulletin-note.is-open .bulletin-note-trigger {
   background: rgba(255, 252, 238, 0.98);
 }
 
-html[data-island-theme="night"] .project-section > div,
 html[data-island-theme="night"] .workbench-grid > div,
 html[data-island-theme="night"] .task-board-card,
 html[data-island-theme="night"] .incubator-group,
@@ -2258,8 +2257,7 @@ html[data-island-theme="night"] .workbench-grid > div:nth-child(1) {
     linear-gradient(135deg, rgba(30, 91, 112, 0.9), rgba(31, 55, 96, 0.94)) !important;
 }
 
-html[data-island-theme="night"] .workbench-grid > div:nth-child(2),
-html[data-island-theme="night"] .project-section > div {
+html[data-island-theme="night"] .workbench-grid > div:nth-child(2) {
   background:
     radial-gradient(
       circle at 88% 14%,
@@ -2637,15 +2635,22 @@ html[data-island-theme="night"] .footer-link-button-dashed {
   line-height: 1.55;
 }
 
-.project-section > div {
-  max-width: 860px;
+.project-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 1120px;
   margin: 0 auto;
+}
+
+@media (max-width: 880px) {
+  .project-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 .project-section .project-card {
   position: relative;
-  max-width: 860px;
-  margin: 0 auto;
   overflow: hidden;
   border-color: rgba(212, 196, 168, 0.92) !important;
   background:
