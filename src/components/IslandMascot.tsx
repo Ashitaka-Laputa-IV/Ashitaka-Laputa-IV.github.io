@@ -14,15 +14,8 @@ const mascotLines = [
 ];
 
 const mascotActions = [
-  { label: "公告板", icon: "board", href: "#bulletin", note: "带你去看看岛上的便签。" },
-  {
-    label: "看教程",
-    icon: "book",
-    href: profile.links.tutorial,
-    note: "从零登岛路线准备好了。",
-    external: true,
-  },
-  { label: "联系岛主", icon: "mail", href: "#contact", note: "给岛主递一封漂流瓶。" },
+  { label: "公告板", icon: "board", href: "#bulletin", note: "带你去看看岛上的便签。", external: false },
+  { label: "联系岛主", icon: "mail", href: "#contact", note: "给岛主递一封漂流瓶。", external: false },
 ];
 
 function getTodayLineIndex() {
