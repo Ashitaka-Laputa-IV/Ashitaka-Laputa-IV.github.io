@@ -96,10 +96,10 @@ export const dockItems: DockItem[] = [
     iconName: "icon-chat",
   },
   {
-    key: "notes",
-    label: "笔记",
-    description: "漂流瓶、灵感碎片",
-    href: "#notes",
+    key: "pr",
+    label: "PR",
+    description: "开源社区的贡献痕迹",
+    href: "#pr",
     color: "app-pink",
     iconName: "icon-design",
   },
@@ -212,5 +212,37 @@ export const islandTasks: IslandTask[] = [
     state: "慢慢打磨",
     tool: "React / TypeScript",
     sparkle: "让界面也会照顾人",
+  },
+];
+
+export type PullRequest = {
+  repo: string;
+  number: number;
+  title: string;
+  url: string;
+  mergedAt: string;
+};
+
+export const pullRequests: PullRequest[] = [
+  {
+    repo: "datawhalechina/deepagents-in-action",
+    number: 77,
+    title: "fix: 修复第9章 md 格式问题（中文的 <中文的> 与 ** 贴合导致强调失败）",
+    url: "https://github.com/datawhalechina/deepagents-in-action/pull/77",
+    mergedAt: "2026-07-12T09:48:52Z",
+  },
+  {
+    repo: "datawhalechina/deepagents-in-action",
+    number: 75,
+    title: "feat: 新增暗色模式支持，完善全站主题适配",
+    url: "https://github.com/datawhalechina/deepagents-in-action/pull/75",
+    mergedAt: "2026-07-11T02:35:55Z",
+  },
+  {
+    repo: "datawhalechina/deepagents-in-action",
+    number: 73,
+    title: "docs: 更新子 Agent 中间件参数说明",
+    url: "https://github.com/datawhalechina/deepagents-in-action/pull/73",
+    mergedAt: "2026-07-10T08:25:30Z",
   },
 ];
