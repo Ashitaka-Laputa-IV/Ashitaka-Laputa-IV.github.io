@@ -22,7 +22,6 @@ const mascotActions = [
     note: "从零登岛路线准备好了。",
     external: true,
   },
-  { label: "孵化器", icon: "egg", href: "#incubator", note: "去孵一只新的 agent 草图。" },
   { label: "联系岛主", icon: "mail", href: "#contact", note: "给岛主递一封漂流瓶。" },
 ];
 
