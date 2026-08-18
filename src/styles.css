@@ -4700,8 +4700,8 @@ html[data-island-theme="night"] .mascot-placeholder {
   color: #794f27;
   background: #efe6d4;
   border: 2px solid #9f927d;
-  border-radius: 50px;
-  padding: 3px 12px;
+  border-radius: 12px;
+  padding: 4px 12px;
 }
 
 .pr-number {
@@ -4743,6 +4743,7 @@ html[data-island-theme="night"] .pr-repo {
   background: rgba(255, 255, 255, 0.06);
   border-color: rgba(255, 255, 255, 0.14);
   color: #ffd98a;
+  border-radius: 12px;
 }
 
 html[data-island-theme="night"] .pr-number {
