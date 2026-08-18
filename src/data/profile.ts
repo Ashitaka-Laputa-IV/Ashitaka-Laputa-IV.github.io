@@ -124,13 +124,13 @@ export const dockItems: DockItem[] = [
 
 export const islandMoodReports: IslandMoodReport[] = [
   {
-    weather: "深耕目标",
+    weather: "海面微微北风",
     mood: "适合按照方向学习, 不骄不躁",
     status: "正在一步步走向目标",
     slowStatus: "剔除杂念, 坚持不放弃",
   },
   {
-    weather: "大胆创造",
+    weather: "海上大风",
     mood: "适合追求新鲜的技术",
     status: "开阔视野",
     slowStatus: "大胆体验, 主动尝试",
