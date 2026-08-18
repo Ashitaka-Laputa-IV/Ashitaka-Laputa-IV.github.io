@@ -1,35 +1,50 @@
 import { Button, Card } from "animal-island-ui";
-import { profile } from "../data/profile";
+
+type RepoCard = {
+  name: string;
+  desc: string;
+  tags: string[];
+  url: string;
+};
+
+const repos: RepoCard[] = [
+  {
+    name: "LangLoop",
+    desc: "LangGraph 实现的 Generator–Discriminator（Ralph Loop）迭代“生成—评估”循环，持续精炼内容直到满足质量阈值。",
+    tags: ["Python", "LangGraph", "Agent Loop"],
+    url: "https://github.com/Ashitaka-Laputa-IV/LangLoop",
+  },
+  {
+    name: "text-to-sql-agent",
+    desc: "把自然语言问题转成 SQL 查询的 agent 实验，探索工具调用与数据库之间的编排节奏。",
+    tags: ["Python", "Text-to-SQL", "Agent"],
+    url: "https://github.com/Ashitaka-Laputa-IV/text-to-sql-agent",
+  },
+  {
+    name: "html2md",
+    desc: "一个功能强大的 Python 库，将 HTML 转为 Markdown，支持嵌套列表、表格、代码块等复杂结构。",
+    tags: ["Python", "HTML", "Markdown"],
+    url: "https://github.com/Ashitaka-Laputa-IV/html2md",
+  },
+];
 
 export function ProjectCard() {
   return (
     <section className="content-section project-section" id="project">
       <div className="project-row">
-        {[0, 1, 2].map((i) => (
-          <Card type="dashed" className="project-card" key={i}>
-            <p className="section-kicker">Main project</p>
-            <h2>ai-agents-from-zero</h2>
-            <p className="section-copy">
-              如果要在岛上插一面小旗，目前最像小旗的就是它：一份从零开始理解 AI
-              agents
-              的教程仓库。它不是宏伟纪念碑，更像我一边赶海一边铺下的路标，
-              希望后来的人少绕一点弯，也多保留一点好奇。
-            </p>
+        {repos.map((repo) => (
+          <Card type="dashed" className="project-card" key={repo.name}>
+            <p className="section-kicker">Project</p>
+            <h2>{repo.name}</h2>
+            <p className="section-copy">{repo.desc}</p>
             <div className="project-tags">
-              <span>AI Agents</span>
-              <span>Tutorial</span>
-              <span>From Zero</span>
+              {repo.tags.map((t) => (
+                <span key={t}>{t}</span>
+              ))}
             </div>
             <div className="project-actions">
-              <Button
-                onClick={() => window.open(profile.links.tutorial, "_blank")}
-              >
-                打开教程仓库
-              </Button>
-              <Button
-                onClick={() => window.open(profile.links.github, "_blank")}
-              >
-                查看更多代码
+              <Button onClick={() => window.open(repo.url, "_blank")}>
+                打开仓库
               </Button>
             </div>
           </Card>
