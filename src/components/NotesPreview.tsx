@@ -27,7 +27,7 @@ export function NotesPreview() {
             <h3 className="pr-title">{pr.title}</h3>
             <div className="pr-foot">
               <span className="pr-date">merged {formatMergedAt(pr.mergedAt)}</span>
-              <Button icon="leaf" onClick={() => window.open(pr.url, "_blank")}>
+              <Button onClick={() => window.open(pr.url, "_blank")}>
                 查看 PR
               </Button>
             </div>

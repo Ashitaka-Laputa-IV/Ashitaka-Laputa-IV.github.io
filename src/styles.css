@@ -4699,7 +4699,7 @@ html[data-island-theme="night"] .mascot-placeholder {
   font-weight: 600;
   color: #794f27;
   background: #efe6d4;
-  border: 2px solid #d8c9ac;
+  border: 2px solid #9f927d;
   border-radius: 50px;
   padding: 3px 12px;
 }
@@ -4707,14 +4707,14 @@ html[data-island-theme="night"] .mascot-placeholder {
 .pr-number {
   font-size: 14px;
   font-weight: 700;
-  color: #5e7d6a;
+  color: #0f9f95;
 }
 
 .pr-title {
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
-  color: #4a3b2b;
+  color: #725d42;
   margin: 0 0 16px;
   min-height: 46px;
 }
@@ -4732,11 +4732,11 @@ html[data-island-theme="night"] .mascot-placeholder {
 }
 
 html[data-island-theme="night"] .pr-grid h3 {
-  color: #f0e4d0;
+  color: #fff0b8;
 }
 
 html[data-island-theme="night"] .pr-grid p {
-  color: #c9b89c;
+  color: #f2eee1;
 }
 
 html[data-island-theme="night"] .pr-repo {
@@ -4746,9 +4746,9 @@ html[data-island-theme="night"] .pr-repo {
 }
 
 html[data-island-theme="night"] .pr-number {
-  color: #8fd0a8;
+  color: #4dded3;
 }
 
 html[data-island-theme="night"] .pr-date {
-  color: #b6a488;
+  color: #c9b89c;
 }

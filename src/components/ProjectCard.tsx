@@ -22,13 +22,11 @@ export function ProjectCard() {
             </div>
             <div className="project-actions">
               <Button
-                icon="boat"
                 onClick={() => window.open(profile.links.tutorial, "_blank")}
               >
                 打开教程仓库
               </Button>
               <Button
-                icon="leaf"
                 onClick={() => window.open(profile.links.github, "_blank")}
               >
                 查看更多代码
