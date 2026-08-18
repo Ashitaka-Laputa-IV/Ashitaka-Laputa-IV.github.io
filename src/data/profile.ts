@@ -63,7 +63,7 @@ export const profile = {
   avatar: "https://github.com/Ashitaka-Laputa-IV.png",
   email: "dili@outlook.com",
   about:
-    "履历没有烟花，但我还在认真收集星星。从前写前端，后来把好奇心驶向 AI agents。喜欢把混乱的问题拆成可以摸到的按钮、流程和小工具，也相信技术不只用来交付功能，还可以帮人把想象力照亮一点。",
+    "虽然只是知识不是饱满, 工程能力不是夯实, 但是一直渴望以清澈的双眼去看这个世界.",
   skills: [
     "AI Agents",
     "Dify",

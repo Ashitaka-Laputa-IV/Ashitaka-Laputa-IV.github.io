@@ -6,7 +6,7 @@ export function AboutSection() {
     <section className="content-section two-column" id="about">
       <div>
         <p className="section-kicker">About</p>
-        <h2>没有耀眼履历，也想把小灯挂起来。</h2>
+        <h2>我想以清澈的双眼去看这个世界。</h2>
       </div>
       <Card color="app-yellow">
         <div className="profile-postcard">
