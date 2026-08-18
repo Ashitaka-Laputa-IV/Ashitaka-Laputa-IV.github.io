@@ -1,4 +1,4 @@
-import { Button, Card, Collapse } from "animal-island-ui";
+import { Button, Card } from "animal-island-ui";
 import { profile } from "../data/profile";
 
 export function ProjectCard() {
@@ -35,10 +35,6 @@ export function ProjectCard() {
             查看更多代码
           </Button>
         </div>
-        <Collapse
-          question="这个教程适合谁？"
-          answer="适合想从概念、工具和实际项目慢慢进入 AI agents 的人。内容会随着我的实践继续生长，像岛上的小树一样，今天多一片叶子，明天多一条路。"
-        />
       </Card>
     </section>
   );
