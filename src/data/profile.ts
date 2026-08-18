@@ -65,13 +65,12 @@ export const profile = {
   about:
     "虽然只是知识不是饱满, 工程能力不是夯实, 但是一直渴望以清澈的双眼去看这个世界.",
   skills: [
-    "AI Agents",
-    "Dify",
-    "Coze",
-    "React",
-    "TypeScript",
-    "Node.js",
+    "LangChain",
+    "LangGraph",
+    "DeepAgents",
+    "Harness",
     "Python",
+    "C/C++",
   ],
 };
 
