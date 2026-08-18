@@ -1,5 +1,6 @@
+import { useEffect, useState } from "react";
 import { Card, Table, type TableColumn } from "animal-island-ui";
-import { islandTasks } from "../data/profile";
+import { islandTasks, type IslandTask } from "../data/profile";
 
 const taskColumns: TableColumn[] = [
   {
@@ -26,6 +27,22 @@ const taskColumns: TableColumn[] = [
 ];
 
 export function IslandBulletinBoard() {
+  const [tasks, setTasks] = useState<IslandTask[]>(islandTasks);
+
+  useEffect(() => {
+    fetch("/island-tasks.json", { cache: "no-store" })
+      .then((res) => {
+        if (!res.ok) throw new Error("not found");
+        return res.json();
+      })
+      .then((data: IslandTask[]) => {
+        if (Array.isArray(data) && data.length > 0) setTasks(data);
+      })
+      .catch(() => {
+        // 找不到外部 json 时，继续用内置任务板
+      });
+  }, []);
+
   return (
     <section className="content-section bulletin-section" id="bulletin">
       <div className="section-heading-center">
@@ -43,7 +60,7 @@ export function IslandBulletinBoard() {
         </div>
         <Table
           columns={taskColumns}
-          dataSource={islandTasks}
+          dataSource={tasks}
           rowKey="key"
           striped
           scroll={{ x: 720 }}
