@@ -24,8 +24,8 @@ export type IslandTask = {
   key: string;
   task: string;
   state: string;
-  tool: string;
-  sparkle: string;
+  tag?: string[];
+  date?: string;
 };
 
 export type FriendLink = {
@@ -176,29 +176,29 @@ export const islandTasks: IslandTask[] = [
     key: "minimum-agent",
     task: "孵化最小可用 agent",
     state: "正在发芽",
-    tool: "Python / Workflow",
-    sparkle: "让概念先跑起来",
+    tag: ["Python", "Workflow"],
+    date: "持续中",
   },
   {
     key: "tutorial-map",
     task: "整理从零教程航线",
     state: "已经上岸",
-    tool: "Markdown / GitHub",
-    sparkle: "给后来者留路标",
+    tag: ["Markdown", "GitHub"],
+    date: "已完成",
   },
   {
     key: "tool-calling",
     task: "观察工具调用潮汐",
     state: "潮汐观察中",
-    tool: "Dify / Coze",
-    sparkle: "找到可靠的编排节奏",
+    tag: ["Dify", "Coze"],
+    date: "每周",
   },
   {
     key: "frontend-spells",
     task: "把前端体验变成 agent 手艺",
     state: "慢慢打磨",
-    tool: "React / TypeScript",
-    sparkle: "让界面也会照顾人",
+    tag: ["React", "TypeScript"],
+    date: "持续中",
   },
 ];
 

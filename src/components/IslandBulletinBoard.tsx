@@ -16,13 +16,17 @@ const taskColumns: TableColumn[] = [
     render: (value) => <span className="task-state">{String(value)}</span>,
   },
   {
-    title: "工具",
-    dataIndex: "tool",
-    width: 160,
+    title: "标签",
+    dataIndex: "tag",
+    width: 200,
+    render: (value) =>
+      Array.isArray(value) ? value.join(" / ") : String(value ?? "—"),
   },
   {
-    title: "发光点",
-    dataIndex: "sparkle",
+    title: "周期",
+    dataIndex: "date",
+    width: 120,
+    render: (value) => String(value ?? "—"),
   },
 ];
 
@@ -30,7 +34,10 @@ export function IslandBulletinBoard() {
   const [tasks, setTasks] = useState<IslandTask[]>(islandTasks);
 
   useEffect(() => {
-    fetch("/island-tasks.json", { cache: "no-store" })
+    fetch(
+      "https://raw.githubusercontent.com/Ashitaka-Laputa-IV/task/main/task.json",
+      { cache: "no-store" },
+    )
       .then((res) => {
         if (!res.ok) throw new Error("not found");
         return res.json();
@@ -39,7 +46,7 @@ export function IslandBulletinBoard() {
         if (Array.isArray(data) && data.length > 0) setTasks(data);
       })
       .catch(() => {
-        // 找不到外部 json 时，继续用内置任务板
+        // 拉取 task 库失败（私有 / 网络 / 分支名不对）时，继续用内置任务板
       });
   }, []);
 
