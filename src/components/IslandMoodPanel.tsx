@@ -3,8 +3,9 @@ import { useState } from "react";
 import { islandMoodReports } from "../data/profile";
 
 function pickIslandMoodReport() {
-  const index = Math.floor(Math.random() * islandMoodReports.length);
-  return islandMoodReports[index] ?? islandMoodReports[0];
+  const day = new Date().getDay(); // 0 = 周日, 1-6 = 周一至周六
+  const index = day === 0 ? 1 : 0; // 周日显示后者，其余显示前者
+  return islandMoodReports[index];
 }
 
 type IslandMoodPanelProps = {

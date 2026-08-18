@@ -124,28 +124,16 @@ export const dockItems: DockItem[] = [
 
 export const islandMoodReports: IslandMoodReport[] = [
   {
-    weather: "灵感微风",
-    mood: "适合把零散念头排成小路",
-    status: "正在把混乱整理成路线",
-    slowStatus: "先给想法晒晒太阳",
+    weather: "深耕目标",
+    mood: "适合按照方向学习, 不骄不躁",
+    status: "正在一步步走向目标",
+    slowStatus: "剔除杂念, 坚持不放弃",
   },
   {
-    weather: "工具屋晴",
-    mood: "适合修一点小按钮和大问题",
-    status: "正在给 agents 补一块木板",
-    slowStatus: "慢慢打磨，也算向前",
-  },
-  {
-    weather: "海面有星光",
-    mood: "适合写一点不那么功利的代码",
-    status: "正在把实验变成可以复现的贝壳",
-    slowStatus: "允许自己在海边多想一会儿",
-  },
-  {
-    weather: "流程潮汐",
-    mood: "适合观察工具调用和真实问题",
-    status: "正在给工作流系上更稳的绳结",
-    slowStatus: "把节奏调轻一点，海风会帮忙",
+    weather: "大胆创造",
+    mood: "适合追求新鲜的技术",
+    status: "开阔视野",
+    slowStatus: "大胆体验, 主动尝试",
   },
 ];
 
