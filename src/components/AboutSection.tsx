@@ -15,12 +15,12 @@ export function AboutSection() {
             href={profile.links.github}
             target="_blank"
             rel="noreferrer"
-            aria-label="打开 didilili 的 GitHub 主页"
+            aria-label="打开 Ashitaka 的 GitHub 主页"
           >
             <img
               className="profile-avatar"
               src={profile.avatar}
-              alt="didilili 的 GitHub 头像"
+              alt="Ashitaka 的 GitHub 头像"
             />
           </a>
           <p className="section-copy">{profile.about}</p>

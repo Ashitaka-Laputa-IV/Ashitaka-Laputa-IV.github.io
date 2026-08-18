@@ -13,11 +13,11 @@ export function Hero() {
             href={profile.links.github}
             target="_blank"
             rel="noreferrer"
-            aria-label="打开 didilili 的 GitHub 主页"
+            aria-label="打开 Ashitaka 的 GitHub 主页"
           >
-            <img src={profile.avatar} alt="didilili 的 GitHub 头像" />
+            <img src={profile.avatar} alt="Ashitaka 的 GitHub 头像" />
             <span>
-              <strong>didilili</strong>
+              <strong>Ashitaka</strong>
               <small>岛主 / agent builder</small>
             </span>
           </a>
