@@ -11,7 +11,6 @@ import { NotesPreview } from "./components/NotesPreview";
 import { ProjectCard } from "./components/ProjectCard";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
-import { Workbench } from "./components/Workbench";
 
 export type IslandTheme = "day" | "night";
 type CelestialTransition = "sunset" | "sunrise" | null;
@@ -145,7 +144,6 @@ export default function App() {
           <IslandBulletinBoard />
           <Divider type="wave-yellow" />
           <ProjectCard />
-          <Workbench />
           <NotesPreview />
           <FriendLinks />
         </main>

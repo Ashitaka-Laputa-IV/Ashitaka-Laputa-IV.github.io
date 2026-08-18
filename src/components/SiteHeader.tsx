@@ -5,7 +5,6 @@ const navItems = [
   { label: "关于", href: "#about" },
   { label: "公告", href: "#bulletin" },
   { label: "成果", href: "#project" },
-  { label: "工作台", href: "#workbench" },
   { label: "笔记", href: "#notes" },
   { label: "友链", href: "#friends" },
   { label: "联系", href: "#contact" },
