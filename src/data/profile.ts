@@ -114,7 +114,7 @@ export const dockItems: DockItem[] = [
   {
     key: "new-idea",
     label: "灵感贝壳",
-    description: "还在海底慢慢长大的念头",
+    description: "海底慢慢长大的念头",
     href: "#top",
     color: "app-pink",
     iconName: "icon-miles",
