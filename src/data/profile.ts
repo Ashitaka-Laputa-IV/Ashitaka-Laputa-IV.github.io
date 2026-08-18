@@ -127,36 +127,6 @@ export const dockItems: DockItem[] = [
   },
 ];
 
-export const workbenchTabs = [
-  {
-    key: "doing",
-    label: "正在发芽",
-    items: [
-      "给 agents 入门路线铺小径",
-      "把前端手艺改造成 AI 产品的木工台",
-      "研究工具调用、记忆和工作流的潮汐",
-    ],
-  },
-  {
-    key: "writing",
-    label: "想慢慢写",
-    items: [
-      "从零孵出一个可用 agent",
-      "Dify / Coze 的小岛测评",
-      "agents 产品里那些会发光的前端体验",
-    ],
-  },
-  {
-    key: "done",
-    label: "已经上岸",
-    items: [
-      "ai-agents-from-zero 教程仓库",
-      "一些 prompt、流程和工具调用实践",
-      "这座可爱的小岛工作台",
-    ],
-  },
-];
-
 export const bulletinEntries: BulletinEntry[] = [
   {
     question: "为什么做这个博客？",
