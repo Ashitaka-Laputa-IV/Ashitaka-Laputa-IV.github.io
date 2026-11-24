@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ashitaka — AI Agent / RAG / Tools</title>
+  <meta name="description" content="Ashitaka 的个人主页：做 AI agent、RAG 和开发者工具。这里放博客、项目和最近的实验。">
+  <meta name="theme-color" content="#f4efe4">
+  <link rel="canonical" href="https://ashitaka-laputa-iv.github.io/">
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ashitaka — AI Agent / RAG / Tools">
+  <meta property="og:description" content="做 AI agent、RAG 和开发者工具。博客、项目和最近的实验。">
+  <meta property="og:url" content="https://ashitaka-laputa-iv.github.io/">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/239959812?v=4">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="./styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="paper-noise" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <nav class="nav shell" aria-label="主导航">
+      <a class="brand" href="#top" aria-label="Ashitaka 首页">
+        <span class="brand-word">Ashitaka</span><span class="brand-dot">.</span>
+      </a>
+      <div class="nav-links">
+        <a href="#now">Now</a>
+        <a href="#writing">Blog</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+      </div>
+      <a class="nav-github" href="https://github.com/Ashitaka-Laputa-IV" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> ASHITAKA · AI AGENT / RAG / DEV TOOLS</p>
+        <h1 id="hero-title">Ashitaka<span class="accent-dot">.</span></h1>
+        <p class="hero-lede">
+          我在做 <strong>AI agent、RAG 和开发者工具</strong>。<br>
+          喜欢把复杂系统拆成能读懂、能修改、能验证的小零件。
+        </p>
+        <p class="hero-sub">Currently building MiniCode, testing RAG ladders, and writing notes in public.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://ashitaka-laputa-iv.github.io/blog/">读博客 <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-ghost" href="https://github.com/Ashitaka-Laputa-IV" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn btn-quiet" href="mailto:dili@outlook.com">Email</a>
+        </div>
+        <ul class="skill-chips" aria-label="常用技术">
+          <li>Python</li><li>TypeScript</li><li>LangGraph</li><li>Deep Agents</li><li>RAG Eval</li><li>MCP</li>
+        </ul>
+      </div>
+
+      <aside class="profile-card" aria-label="个人名片">
+        <div class="profile-top">
+          <span class="card-label">FIELD CARD / 001</span>
+          <span class="profile-stamp">OPEN SOURCE</span>
+        </div>
+        <div class="profile-main">
+          <div class="avatar-wrap">
+            <span class="avatar-fallback" aria-hidden="true">A</span>
+            <img class="avatar" src="https://avatars.githubusercontent.com/u/239959812?v=4" alt="Ashitaka 的头像" width="96" height="96" referrerpolicy="no-referrer" onerror="this.style.visibility='hidden'">
+          </div>
+          <div class="profile-id">
+            <h2>Ashitaka</h2>
+            <p>@Ashitaka-Laputa-IV</p>
+          </div>
+        </div>
+        <div class="profile-status"><span class="status-dot"></span> building in public</div>
+        <dl class="profile-facts">
+          <div><dt>Now</dt><dd>MiniCode · baby-rag-history</dd></div>
+          <div><dt>Focus</dt><dd>agents / retrieval / evals</dd></div>
+          <div><dt>Contact</dt><dd><a href="mailto:dili@outlook.com">dili@outlook.com</a></dd></div>
+        </dl>
+        <div class="profile-links">
+          <a href="https://ashitaka-laputa-iv.github.io/blog/">Blog <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/Ashitaka-Laputa-IV" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </aside>
+    </section>
+
+    <div class="rule-label shell" aria-hidden="true">
+      <span>SCROLL TO EXPLORE</span><span class="rule-line"></span><span>2026 · 11</span>
+    </div>
+
+    <section class="section shell" id="now">
+      <div class="section-head reveal">
+        <p class="section-kicker">01 / NOW</p>
+        <h2>最近在把 agent<br>做得更可读。</h2>
+        <p class="section-lede">不是再堆一个平台，而是把控制流、工具、评测和失败原因摊开来看。</p>
+      </div>
+      <div class="now-grid">
+        <article class="now-card reveal" style="--accent:#ff5a36;--soft:#fff0e8">
+          <span class="now-index">A</span>
+          <h3>Building</h3>
+          <p>MiniCode：终端 coding agent，包含权限、HITL 审批、checkpoint 和离线评测。</p>
+          <a href="https://github.com/Ashitaka-Laputa-IV/MiniCode" target="_blank" rel="noreferrer">看仓库 <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="now-card reveal delay-1" style="--accent:#0e756c;--soft:#e7f8f3">
+          <span class="now-index">B</span>
+          <h3>Measuring</h3>
+          <p>baby-rag-history：把九个 RAG 里程碑放进一张 LangGraph，同时量效果、召回、弃答与成本。</p>
+          <a href="https://ashitaka-laputa-iv.github.io/baby-rag-history/" target="_blank" rel="noreferrer">看页面 <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="now-card reveal delay-2" style="--accent:#4b73e8;--soft:#edf1ff">
+          <span class="now-index">C</span>
+          <h3>Exploring</h3>
+          <p>agent tracing、MCP、context engineering，以及怎样让一次失败变得可以复盘。</p>
+          <a href="https://github.com/Ashitaka-Laputa-IV?tab=repositories" target="_blank" rel="noreferrer">翻实验 <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="writing">
+      <a class="blog-feature reveal" href="https://ashitaka-laputa-iv.github.io/blog/">
+        <div class="blog-copy">
+          <p class="section-kicker light">02 / WRITING</p>
+          <h2>把实验写下来，<br>才算真的做完。</h2>
+          <p>记录 agent、RAG、工具链和工程实践。有时也写一点关于学习和长期主义的东西。</p>
+          <span class="blog-cta">去博客看看 <span aria-hidden="true">↗</span></span>
+        </div>
+        <div class="blog-side" aria-hidden="true">
+          <span class="blog-word">BLOG</span>
+          <span class="blog-meta">notes from the workbench</span>
+        </div>
+      </a>
+    </section>
+
+    <section class="section shell" id="work">
+      <div class="section-head reveal">
+        <p class="section-kicker">03 / SELECTED WORK</p>
+        <h2>一些做过的<br>小东西。</h2>
+        <p class="section-lede">从 terminal agent 到 RAG 评测，从 MCP 到 chunking。都在开源里。</p>
+      </div>
+      <div class="work-grid">
+        <article class="project-card reveal" style="--accent:#ff5a36;--soft:#fff0e8">
+          <div class="project-top"><span class="project-num">01</span><span class="project-type">AGENT / PYTHON</span></div>
+          <h3>MiniCode</h3>
+          <p>终端 coding agent：权限模式、HITL 审批、SQLite checkpoint、离线评测。</p>
+          <ul class="project-tags"><li>Agent</li><li>TUI</li><li>Evals</li></ul>
+          <div class="project-links">
+            <a href="https://ashitaka-laputa-iv.github.io/MiniCode/" target="_blank" rel="noreferrer">Live <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/Ashitaka-Laputa-IV/MiniCode" target="_blank" rel="noreferrer">Code <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="project-card reveal delay-1" style="--accent:#0e756c;--soft:#e7f8f3">
+          <div class="project-top"><span class="project-num">02</span><span class="project-type">RAG / LANGGRAPH</span></div>
+          <h3>baby-rag-history</h3>
+          <p>九个 RAG 里程碑，一张状态机，一份中文维基语料；统一记录召回、弃答和 cold cost。</p>
+          <ul class="project-tags"><li>RAG</li><li>LangGraph</li><li>Eval</li></ul>
+          <div class="project-links">
+            <a href="https://ashitaka-laputa-iv.github.io/baby-rag-history/" target="_blank" rel="noreferrer">Live <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/Ashitaka-Laputa-IV/baby-rag-history" target="_blank" rel="noreferrer">Code <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="project-card reveal delay-2" style="--accent:#4b73e8;--soft:#edf1ff">
+          <div class="project-top"><span class="project-num">03</span><span class="project-type">OBSERVABILITY</span></div>
+          <h3>Tracekit</h3>
+          <p>给 AI agent 的可追踪执行：tamper-evident tracing、policy gates 和 cross-checks。</p>
+          <ul class="project-tags"><li>Tracing</li><li>Policy</li><li>Agents</li></ul>
+          <div class="project-links">
+            <a href="https://tracekit.tech" target="_blank" rel="noreferrer">Live <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/Ashitaka-Laputa-IV/Tracekit" target="_blank" rel="noreferrer">Code <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="project-card reveal" style="--accent:#b47a13;--soft:#fff6df">
+          <div class="project-top"><span class="project-num">04</span><span class="project-type">MCP / RAG</span></div>
+          <h3>web-corpus-mcp</h3>
+          <p>把网页变成可搜索、可引用的 corpus，通过 MCP 交给 agent 使用。</p>
+          <ul class="project-tags"><li>MCP</li><li>Retrieval</li><li>Corpus</li></ul>
+          <div class="project-links">
+            <a href="https://github.com/Ashitaka-Laputa-IV/web-corpus-mcp" target="_blank" rel="noreferrer">Code <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="project-card reveal delay-1" style="--accent:#a14c74;--soft:#fff0f6">
+          <div class="project-top"><span class="project-num">05</span><span class="project-type">PYTHON / PACKAGE</span></div>
+          <h3>langchain-md-chunker</h3>
+          <p>把 Markdown / MDX 切成 chunk，同时保留精确的源字符 offset。</p>
+          <ul class="project-tags"><li>Chunking</li><li>Markdown</li><li>PyPI</li></ul>
+          <div class="project-links">
+            <a href="https://pypi.org/project/langchain-md-chunker/" target="_blank" rel="noreferrer">PyPI <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/Ashitaka-Laputa-IV/langchain-md-chunker" target="_blank" rel="noreferrer">Code <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="project-card reveal delay-2" style="--accent:#5f5a54;--soft:#f2f0eb">
+          <div class="project-top"><span class="project-num">06</span><span class="project-type">AGENT / ARCHITECTURE</span></div>
+          <h3>simple-claude-code</h3>
+          <p>把 Claude Code 的核心 agent 架构压缩成约一千行的可读实现。</p>
+          <ul class="project-tags"><li>Architecture</li><li>Agent</li><li>Python</li></ul>
+          <div class="project-links">
+            <a href="https://github.com/Ashitaka-Laputa-IV/simple-claude-code" target="_blank" rel="noreferrer">Code <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell" id="about">
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p class="section-kicker">04 / ABOUT</p>
+          <h2>写代码，<br>也写清楚为什么。</h2>
+          <p>我是 Ashitaka，一名把大部分时间花在 agent 系统上的工程师。做过前端，也写 Python / C++；现在更关心 agent 怎样稳定地使用工具、怎样被诚实地评测、怎样让读代码的人不迷路。</p>
+          <p>我相信好的系统应该能被读懂，好的实验应该能被复现。这个主页是我放项目、文章和实验记录的地方。</p>
+        </div>
+        <aside class="about-side reveal delay-1">
+          <div class="side-block">
+            <p class="side-label">TOOLBOX</p>
+            <ul class="tool-list">
+              <li>Python / TypeScript</li>
+              <li>LangChain / LangGraph</li>
+              <li>Deep Agents / MCP</li>
+              <li>RAG evaluation</li>
+              <li>C / C++</li>
+            </ul>
+          </div>
+          <div class="side-block">
+            <p class="side-label">ELSEWHERE</p>
+            <ul class="elsewhere-list">
+              <li><a href="https://ashitaka-laputa-iv.github.io/blog/">Blog <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://github.com/Ashitaka-Laputa-IV" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a></li>
+              <li><a href="mailto:dili@outlook.com">dili@outlook.com</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="contact shell reveal" id="contact">
+      <p class="section-kicker">05 / SAY HI</p>
+      <h2>有想法，<br>就聊一聊。</h2>
+      <p>项目、合作，或者只是聊聊 agent 和 RAG，都欢迎来信。</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:dili@outlook.com">dili@outlook.com</a>
+        <button class="btn btn-quiet" type="button" data-copy-email="dili@outlook.com">复制邮箱</button>
+        <a class="text-link" href="https://github.com/Ashitaka-Laputa-IV" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <p>Ashitaka · AI Agent / RAG / Tools</p>
+    <p>© <span id="year">2026</span> · built by hand · last updated 2026.11</p>
+  </footer>
+
+  <div id="copy-status" class="sr-only" aria-live="polite"></div>
+</body>
+</html>

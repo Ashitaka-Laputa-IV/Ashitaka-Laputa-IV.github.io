@@ -1,5 +1,22 @@
-# ashitaka-laputa-iv.github.io
+# Ashitaka
 
-Agent 工程师的小岛工作台。这里是一座给 AI agents 和奇思妙想停靠的个人博客，也是 Ashitaka 的 GitHub Pages 主页。
+Ashitaka 的个人主页：AI agent、RAG 和开发者工具。
 
-站点风格基于 [animal-island-ui](https://github.com/guokaigdg/animal-island-ui)，用 React/Vite 搭建，整体做成偏卡通、温柔、有一点动森气质的小岛界面。
+页面在 [`site/`](site/)：纯静态 HTML/CSS/JS，无构建步骤。内容包括简介、博客入口、代表项目和联系方式。
+
+## 本地预览
+
+```bash
+python -m http.server 8000 --directory site
+```
+
+然后打开 <http://localhost:8000/>。
+
+## 部署
+
+GitHub Pages 通过 [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) 部署 `site/`：
+
+- push 到 `main`；
+- 或在 Actions 里手动运行 `Deploy GitHub Pages`。
+
+线上地址：<https://ashitaka-laputa-iv.github.io/>
