@@ -83,7 +83,7 @@
 
   for (const button of $$("[data-copy-email]")) {
     button.addEventListener("click", async () => {
-      const ok = await copyText(button.dataset.copyEmail || "dili@outlook.com");
+      const ok = await copyText(button.dataset.copyEmail || "Ashitaka-Laputa-IV@outlook.com");
       const old = button.textContent;
       button.textContent = ok ? "已复制" : "复制失败";
       if (copyStatus) copyStatus.textContent = ok ? "邮箱已复制" : "复制失败";
